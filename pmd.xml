@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<ruleset name="quickstart"
+	xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+	<description>PMD rules used in the FEB22012 course at ESE</description>
+
+	<!-- Rules -->
+	<rule ref="category/java/bestpractices.xml/MissingOverride" />
+	
+	<!-- Important -->
+	<rule ref="category/java/bestpractices.xml/ForLoopCanBeForeach" />
+	<rule ref="category/java/bestpractices.xml/UnusedLocalVariable" />
+	<rule ref="category/java/bestpractices.xml/UnusedPrivateField" />
+	<rule ref="category/java/bestpractices.xml/UnusedPrivateMethod" />
+	<rule ref="category/java/bestpractices.xml/UseTryWithResources" />
+	<rule ref="category/java/codestyle.xml/ExtendsObject" />
+	<rule ref="category/java/codestyle.xml/ForLoopShouldBeWhileLoop" />
+	<rule ref="category/java/design.xml/AvoidThrowingNullPointerException" />
+	<rule ref="category/java/design.xml/SingularField" />
+	<rule ref="category/java/design.xml/UselessOverridingMethod" />
+	<rule ref="category/java/errorprone.xml/BrokenNullCheck" />
+	<rule ref="category/java/errorprone.xml/CloseResource" />
+	<rule ref="category/java/errorprone.xml/EqualsNull" />
+	<rule ref="category/java/errorprone.xml/JumbledIncrementer" />
+	<rule ref="category/java/errorprone.xml/MisplacedNullCheck" />
+	<rule ref="category/java/errorprone.xml/NonStaticInitializer" />
+	<rule ref="category/java/errorprone.xml/ReturnFromFinallyBlock" />
+	<rule ref="category/java/errorprone.xml/UnconditionalIfStatement" />
+	<rule ref="category/java/errorprone.xml/UseEqualsToCompareStrings" />
+	<rule ref="category/java/errorprone.xml/UselessOperationOnImmutable" />
+	
+	<!-- Sloppy -->
+	<rule ref="category/java/bestpractices.xml/DoubleBraceInitialization" />
+	<rule ref="category/java/bestpractices.xml/SwitchStmtsShouldHaveDefault" />
+	<rule ref="category/java/bestpractices.xml/UnusedImports" />
+	<rule ref="category/java/bestpractices.xml/WhileLoopWithLiteralBoolean" />
+	<rule ref="category/java/codestyle.xml/DontImportJavaLang" />
+	<rule ref="category/java/codestyle.xml/DuplicateImports" />
+	<rule ref="category/java/codestyle.xml/UnnecessaryReturn" />
+	<rule ref="category/java/codestyle.xml/UseDiamondOperator" />
+	<rule ref="category/java/codestyle.xml/UselessParentheses" />
+	<rule ref="category/java/design.xml/AbstractClassWithoutAnyMethod" />
+	<rule ref="category/java/errorprone.xml/AvoidCatchingNPE" />
+	<rule ref="category/java/errorprone.xml/AvoidCatchingThrowable" />
+	<rule ref="category/java/errorprone.xml/IdempotentOperations" />
+	<rule ref="category/java/errorprone.xml/MissingBreakInSwitch" />
+	<rule ref="category/java/errorprone.xml/UnusedNullCheckInEquals" />
+	
+	<!-- Style, Layout and Names -->
+	<rule ref="category/java/codestyle.xml/AvoidDollarSigns" />
+	<rule ref="category/java/errorprone.xml/AvoidFieldNameMatchingTypeName" />
+	<rule ref="category/java/errorprone.xml/MethodWithSameNameAsEnclosingClass" />
+	<rule ref="category/java/errorprone.xml/SuspiciousEqualsMethodName" />
+	<rule ref="category/java/errorprone.xml/SuspiciousHashcodeMethodName" />
+
+</ruleset>

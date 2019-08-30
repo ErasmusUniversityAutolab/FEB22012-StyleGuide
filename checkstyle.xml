@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+          "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+          "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<!-- This file contains rules used by CheckStyle during the
+	 FEB22012(X) Programming course of the Erasmus School of Economics -->
+
+<module name="Checker">
+	<property name="severity" value="error" />
+
+	<property name="fileExtensions" value="java, properties, xml" />
+
+	<!-- Excludes all 'module-info.java' files -->
+	<!-- See https://checkstyle.org/config_filefilters.html -->
+	<module name="BeforeExecutionExclusionFileFilter">
+		<property name="fileNamePattern" value="module\-info\.java$" />
+	</module>
+
+	<!-- This is a code layout, style and naming rule -->
+	<module name="RegexpSingleline">
+		<!-- <property name="format" value="\s+$"/> -->
+		<property name="minimum" value="0" />
+		<property name="maximum" value="0" />
+		<property name="message" value="Line has trailing spaces." />
+	</module>
+
+	<module name="TreeWalker">
+
+		<!-- Mandatory Rules -->
+		<module name="OneTopLevelClass" />
+	
+		<module name="EqualsHashCode" />
+		<module name="VisibilityModifier">
+			<property name="allowPublicFinalFields" value="true" />
+			<property name="allowPublicImmutableFields" value="true" />
+		</module>
+	
+		<module name="InvalidJavadocPosition" />
+		<module name="JavadocMethod" />
+		<module name="JavadocType">
+			<property name="authorFormat" value="\d{6}\w{2}.*" />
+			<message key="name.invalidPattern"
+	   			value="Class level Javadoc must be present and contain an author with an ERNA, for example '@author 123456ae Adrian Example'." />
+		</module>
+		<module name="MissingJavadocMethod" />
+		<module name="MissingJavadocType" />
+		<module name="NonEmptyAtclauseDescription" />
+		
+		
+		<!-- Important Rules -->
+		
+		<module name="AvoidNestedBlocks">
+			<property name="allowInSwitchCase" value="true" />
+		</module>
+
+		<module name="EmptyCatchBlock" />
+		<module name="NeedBraces" />
+		<module name="HiddenField">
+			<property name="ignoreConstructorParameter" value="true" />
+			<property name="ignoreSetter" value="true" />
+		</module>
+		<module name="InnerAssignment" />
+
+		<module name="SimplifyBooleanExpression" />
+		<module name="SimplifyBooleanReturn" />
+		
+		<!-- Sloppy Code Rules -->
+		
+		<module name="IllegalCatch" />
+		<module name="IllegalThrows" />
+		<module name="IllegalType" />
+		<module name="UnusedImports">
+			<property name="processJavadoc" value="false" />
+		</module>
+		<module name="TodoComment">
+			<property name="format"
+				value="(TODO:)|(generated method stub)" />
+			<message key="name.invalidPattern"
+				value="Comments should not contain the text 'TODO:' or 'generated method stub'" />
+		</module>
+
+		<module name="UncommentedMain">
+			<property name="excludedClasses" value="Main$" />
+			<message key="name.invalidPattern"
+				value="Main methods are only allowed in classes with names ending with 'Main'" />
+		</module>
+
+		<module name="EmptyBlock" />
+		<module name="EmptyStatement" />
+		
+		<!-- Code layout, style and naming rules -->
+		<!-- Whitespace and Layout -->
+		<module name="MethodParamPad" />
+		<module name="GenericWhitespace" />
+		<module name="SingleSpaceSeparator" />
+		<module name="CommentsIndentation" />
+		<module name="TrailingComment" />
+
+		<module name="OneStatementPerLine" />
+		<module name="CommentsIndentation" />
+
+		<!-- Naming Things -->
+		<module name="ConstantName" />
+		<module name="LambdaParameterName" />
+		<module name="LocalFinalVariableName" />
+		<module name="LocalVariableName" />
+		<module name="MemberName" />
+		<module name="MethodName" />
+		<module name="ParameterName" />
+		<module name="StaticVariableName" />
+		<module name="TypeName" />
+		
+		
+		
+	</module>
+</module>
