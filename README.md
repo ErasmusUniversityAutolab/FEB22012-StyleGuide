@@ -9,4 +9,4 @@ Submitted code is automatically subjected to the static code analysis tools [Che
 This repository also contains relevant style files if you want to use them in your own IDE:
 
 * [Rule file for Checkstyle](checkstyle.xml)
-* [Rule file for PMD](pdm.xml)
+* [Rule file for PMD](pmd.xml)
