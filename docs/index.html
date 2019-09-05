@@ -57,8 +57,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         <li><a href="#feb22012-programming-code-quality-guide">FEB22012 Programming Code Quality Guide</a><ul>
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#mandatory-rules">Mandatory Rules</a></li>
-        <li><a href="#important-rules-error-prone-coding">Important Rules: Error Prone Coding</a></li>
+        <li><a href="#high-priority-error-prone-coding">High Priority: Error Prone Coding</a></li>
         <li><a href="#indications-of-sloppy-code">Indications of sloppy code</a></li>
+        <li><a href="#coding-style">Coding style</a></li>
         </ul></li>
         </ul>
         </div>
@@ -68,8 +69,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2 id="introduction">Introduction</h2>
 <p>This document contains the code quality guide that we use during the FEB22012(X) Programming course.</p>
 <h2 id="mandatory-rules">Mandatory Rules</h2>
-<p>A number of rules are mandatory in the sense that we do not award any points for code quality and style if these are violated. This is only a small set of rules you have to adhere to. Most of these rules are all related to writing proper Javadoc comments, but there are three other rules: a <code>.java</code> file should contain a single top-level class, you should refrain from using mutable <code>public</code> instance variables and if you override either <code>hashCode()</code> or <code>equals()</code>, you should also override the other.</p>
-<p>Relevant Rules regarding Javadoc:</p>
+<p>A number of rules are strict in the sense that we do not award any points for code quality and style if these are violated. This is only a small set of rules you have to adhere to. Most of these rules are all related to writing proper Javadoc comments, but there are three other rules: a <code>.java</code> file should contain a single top-level class, you should refrain from using mutable <code>public</code> instance variables and if you override either <code>hashCode()</code> or <code>equals()</code>, you should also override the other.</p>
+<p>Relevant links regarding Javadoc rules:</p>
 <ul>
 <li><a href="https://checkstyle.sourceforge.io/config_javadoc.html#InvalidJavadocPosition">InvalidJavadocPosition</a></li>
 <li><a href="https://checkstyle.sourceforge.io/config_javadoc.html#JavadocMethod">JavadocMethod</a></li>
@@ -79,7 +80,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="https://checkstyle.sourceforge.io/config_javadoc.html#NonEmptyAtclauseDescription">NonEmptyAtclauseDescription</a></li>
 <li><a href="https://checkstyle.sourceforge.io/config_design.html#VisibilityModifier">VisibilityModifier</a></li>
 </ul>
-<p>Relevant Rules regarding general programming:</p>
+<p>Relevant links regarding general programming rules:</p>
 <ul>
 <li><a href="https://checkstyle.sourceforge.io/config_coding.html#EqualsHashCode">EqualsHashCode</a></li>
 <li><a href="https://checkstyle.sourceforge.io/config_design.html#OneTopLevelClass">OneTopLevelClass</a></li>
@@ -87,27 +88,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <h3 id="proper-javadoc-comments">Proper Javadoc Comments</h3>
 <p>You should write Javadoc comments to document public <em>classes</em> and <em>methods</em>. It is not allowed to write Javadoc comments in other locations. Regular comments are allowed. The following code fragment contains some examples:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">  <span class="at">@Override</span>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">  <span class="fu">@Override</span>
   <span class="co">/**</span>
-   <span class="co">*</span> This JavaDoc comment should be before the <span class="co">@</span>Override annotation<span class="co">,</span> not here<span class="co">.</span>
-   <span class="co">*/</span>
+<span class="co">   * This JavaDoc comment should be before the @Override annotation, not here.</span>
+<span class="co">   */</span>
    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">compare</span>(MyClass o1, MyClass o2) {
       <span class="co">/**</span>
-      <span class="co">*</span> Javadoc comments should never be written inside methods<span class="co">!</span>
-      <span class="co">*/</span> 
-      <span class="co">// Regular single line comments are allowed anywhere</span>
-      <span class="co">/* Multi-line regular comments</span>
-<span class="co">       * are also allowed anywhere</span>
-<span class="co">      */</span>
-      <span class="kw">return</span> o1.<span class="fu">getValue</span>() - o2.<span class="fu">getValue</span>();
+<span class="co">       * Javadoc comments should never be written inside methods!</span>
+<span class="co">       */</span> 
+       <span class="co">// Regular single line comments are allowed anywhere</span>
+       <span class="co">/* Multi-line regular comments</span>
+<span class="co">        * are also allowed anywhere</span>
+<span class="co">        */</span>
+       <span class="kw">return</span> o1.<span class="fu">getValue</span>() - o2.<span class="fu">getValue</span>();
    }
 }</code></pre></div>
 <p>Your classes should always contain Javadoc with a <code>@author</code> tag that starts with your ERNA-id. For example, a correct (but too short) class Javadoc could look as follows:</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">/**</span>
- <span class="co">*</span> This class does some very interesting stuff<span class="co">.</span>
- <span class="co">*</span>
- <span class="co">*</span> <span class="kw">@author </span><span class="co">123456ae</span> Adrian Example
- <span class="co">*/</span>
+<span class="co"> * This class does some very interesting stuff.</span>
+<span class="co"> *</span>
+<span class="co"> * </span><span class="kw">@author </span><span class="co">123456ae Adrian Example</span>
+<span class="co"> */</span>
 <span class="kw">public</span> <span class="kw">class</span> MyClass {
 
 }</code></pre></div>
@@ -115,7 +116,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3 id="make-instance-variables-private">Make instance variables private</h3>
 <p>A well designed class should not burden its users with details of its implementation. You have probably worked with objects of the String class, but you do not necessarily know all the details of how it is implemented by the programmers of the Java language. A common way to do this, it to make sure all interactions with objects of a class are performed using methods of that class, while the internal data model (i.e. the instance variables) of the objects are hidden from the users. This referred to as <a href="https://en.wikipedia.org/wiki/Information_hiding">information hiding</a> or <a href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)">encapsulation</a>.</p>
 <p>As a consequence, you should define all instance variables or class members as <code>private</code>.</p>
-<p>**Note :* in certain exercises, this requirement may be relaxed to some extent. If so, this is mentioned in the text of the exercise.</p>
+<p><strong>Note :</strong> in certain exercises, this requirement may be relaxed to some extent. If so, this is mentioned in the text of the exercise.</p>
 <h3 id="single-top-level-class">Single Top Level class</h3>
 <p>You are only allowed to have a single top-level class in a <code>.java</code> file. The following code fragment gives an example of a file with two top-level classes.</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Foo{
@@ -126,28 +127,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <span class="co">//methods</span>
 }</code></pre></div>
 <p>If you want to have more than a single class in a file, you can consider to create <em>static inner classes</em>. This can be done as follows:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Foo{
-  <span class="co">//methods</span>
+<pre><code>public class Foo{
+  //methods
   
-  <span class="dt">static</span> <span class="kw">class</span> Foo2{
-  <span class="co">//methods</span>
+  static class Foo2{
+  //methods
   }
 
-}</code></pre></div>
+}</code></pre>
 <h3 id="override-both-hashcode-and-equals">Override both hashCode and equals</h3>
 <p>This rule becomes relevant when you are introduce to inheritance and the <code>Object</code> class; it is not likely you will violate it before you understand these concepts. It basically means that as soon as a class override either the <code>hashCode()</code> or <code>equals()</code> method, it should also override the other one. It is almost always incorrect to override only one of them according to the contracts of these methods.</p>
-<h3 id="override-annotation-is-mandatory">Override annotation is mandatory</h3>
-<p>When you learn how to implement an interface or extend a class, you may want to override methods. When you override a method, you should always use the <code>@Override</code> annotation, since it avoids that you accidentally introduce a new method while you intend to override something. For example, you want to override a method <code>doAnalysis()</code> but accidentally call the method in the subclass <code>analysis()</code>. With the <span class="citation">@Override</span> annotation, the compiler will warn you that you made a mistake, that is usually hard to find by debugging.</p>
-<p>Annotating overridden methods with <span class="citation">@Override</span> ensures at compile time that the method really overrides one, which helps refactoring and clarifies intent. For example:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Foo <span class="kw">implements</span> <span class="bu">Comparable</span>&lt;Foo&gt; {
-                <span class="co">// This method is overridden, and should have an @Override annotation</span>
-                <span class="kw">public</span> <span class="dt">int</span> <span class="fu">compareTo</span>(Foo other) {
+<h3 id="use-the-override-annotation-when-overriding-methods.">Use the <span class="citation">@Override</span> annotation when overriding methods.</h3>
+<p>When you implement and interface or create a subclass, you should always indicate which methods override other methods. Note that if you use Eclipse to generate overriden methods for you, the annotation is always added. Adding the notation is considered good practice, because it avoids that you introduce new methods rather than overriding old ones (e.g. you create a new method <code>hashcode()</code> while you intend to override <code>hashCode()</code>).</p>
+<p>Annotating overridden methods with <span class="citation">@Override</span> ensures at compile time that the method really overrides one, which helps refactoring and clarifies intent.</p>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Foo <span class="kw">implements</span> Runnable {
 
-                }
-            }</code></pre></div>
-<h2 id="important-rules-error-prone-coding">Important Rules: Error Prone Coding</h2>
+   <span class="co">// This method is overridden, and should have an @Override annotation</span>
+   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
+
+   }
+}</code></pre></div>
+<h2 id="high-priority-error-prone-coding">High Priority: Error Prone Coding</h2>
 <p>The second set of rules are <em>error prone</em> coding rules. If these issues are detected in your code, it will have a strong impact on your score for code quality. While it is technically possible to use violate these rules in correct code, in almost all cases these things are mistakes, or can quickly lead to mistakes if you need to change your code at a later moment. Therefore, you should avoid doing these things.</p>
-<p>Relevant rules:</p>
+<p>External links to relevant rules:</p>
 <ul>
 <li><a href="https://checkstyle.sourceforge.io/config_blocks.html#AvoidNestedBlocks">AvoidNestedBlocks</a></li>
 <li><a href="https://checkstyle.sourceforge.io/config_blocks.html#EmptyCatchBlock">EmptyCatchBlock</a></li>
@@ -156,6 +159,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="https://checkstyle.sourceforge.io/config_coding.html#InnerAssignment">InnerAssignment</a></li>
 <li><a href="https://checkstyle.sourceforge.io/config_coding.html#SimplifyBooleanExpression">SimplifyBooleanExpression</a></li>
 <li><a href="https://checkstyle.sourceforge.io/config_coding.html#SimplifyBooleanReturn">SimplifyBooleanReturn</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#usetrywithresources">UseTryWithResources</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#equalsnull">EqualsNull</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#unusedprivatemethod">UnusedPrivateMethod</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#unconditionalifstatement">UnconditionalIfStatement</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#nonstaticinitializer">NonStaticInitializer</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#uselessoperationonimmutable">UselessOperationOnImmutable</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#jumbledincrementer">JumbledIncrementer</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#unusedprivatefield">UnusedPrivateField</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#forloopshouldbewhileloop">ForLoopShouldBeWhileLoop</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#useequalstocomparestrings">UseEqualsToCompareStrings</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#returnfromfinallyblock">ReturnFromFinallyBlock</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#forloopcanbeforeach">ForLoopCanBeForeach</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#unusedlocalvariable">UnusedLocalVariable</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_design.html#uselessoverridingmethod">UselessOverridingMethod</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_design.html#singularfield">SingularField</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#closeresource">CloseResource</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#extendsobject">ExtendsObject</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#misplacednullcheck">MisplacedNullCheck</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#brokennullcheck">BrokenNullCheck</a></li>
 </ul>
 <h3 id="avoid-nested-blocks">Avoid Nested Blocks</h3>
 <p>In Java, you are allowed to define loose blocks, that have their own scope. The following code fragment contains a loose block:</p>
@@ -163,13 +185,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
    <span class="dt">int</span> x = <span class="dv">3</span>;
    {
       <span class="co">// This is a loose block, which you should avoid.</span>
-     <span class="dt">int</span> x = <span class="dv">5</span>;
+      <span class="dt">int</span> x = <span class="dv">5</span>;
    }
-   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The number is &quot;</span>+x);
+   System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The number is &quot;</span>+x);
    
    <span class="co">// This block belong to an-if statement, and is allowed.</span>
    <span class="kw">if</span> (x &lt; <span class="dv">5</span>) {
-      <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Smaller than 3&quot;</span>);
+      System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Smaller than 3&quot;</span>);
    }
    
    <span class="co">// The accidental semi-colon seperates the if statement</span>
@@ -178,71 +200,71 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
    <span class="kw">if</span> (x==<span class="dv">5</span>); <span class="co">// notice the semi-colon!!</span>
    {
       <span class="co">// Oops! This part is always executed, not matter</span>
-     <span class="co">// what the value of x is.</span>
-     <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;x seems to be five&quot;</span>);
+      <span class="co">// what the value of x is.</span>
+      System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;x seems to be five&quot;</span>);
    }
 }</code></pre></div>
 <h3 id="avoid-empty-catch-blocks">Avoid Empty Catch Blocks</h3>
 <p>In Java, empty <code>catch</code> blocks are considered bad practice since they suppress mistakes, while the user of your program may want to know that something went wrong. You should never catch an Exception if you have no good way to deal with. At the very least, you should print a stacktracte using the <code>e.printStackTrace()</code> on the <code>Exception</code> object <code>e</code>. Alternatively, you can throw the exception to a caller. Consider the following code fragments:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">readFileInBadWay</span>(<span class="bu">File</span> input) {
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">readFileInBadWay</span>(File input) {
    <span class="kw">try</span> {
-     <span class="bu">List</span>&lt;<span class="bu">String</span>&gt; allLines = Files.<span class="fu">readAllLines</span>(input.<span class="fu">toPath</span>());
+      List&lt;String&gt; allLines = Files.<span class="fu">readAllLines</span>(input.<span class="fu">toPath</span>());
    }
    <span class="co">// The following catch-block is empty; you should avoid this.</span>
-   <span class="kw">catch</span> (<span class="bu">IOException</span> ex) {
+   <span class="kw">catch</span> (IOException ex) {
      
    }
 }
 
-<span class="kw">public</span> <span class="dt">void</span> <span class="fu">readFileInBetterWay</span>(<span class="bu">File</span> input) {
+<span class="kw">public</span> <span class="dt">void</span> <span class="fu">readFileInBetterWay</span>(File input) {
    <span class="kw">try</span> {
-     <span class="bu">List</span>&lt;<span class="bu">String</span>&gt; allLines = Files.<span class="fu">readAllLines</span>(input.<span class="fu">toPath</span>());
+      List&lt;String&gt; allLines = Files.<span class="fu">readAllLines</span>(input.<span class="fu">toPath</span>());
    }
    <span class="co">// The following catch-block at least gives a message to the user.</span>
    <span class="co">// This is allowed</span>
-   <span class="kw">catch</span> (<span class="bu">IOException</span> ex) {
-     <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Error reading file &quot;</span>+input);
-    ex.<span class="fu">printStackTrace</span>();
+   <span class="kw">catch</span> (IOException ex) {
+     System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Error reading file &quot;</span>+input);
+     ex.<span class="fu">printStackTrace</span>();
    }
 }
 
 <span class="co">// Since our caller should provide an input file that we can read properly,</span>
 <span class="co">// in this case the best design is to let the caller of this method deal</span>
 <span class="co">// with the IOException if the file can not be read.</span>
-<span class="kw">public</span> <span class="dt">void</span> <span class="fu">readFileInBestWay</span>(<span class="bu">File</span> input) <span class="kw">throws</span> <span class="bu">IOException</span> {
-   <span class="bu">List</span>&lt;<span class="bu">String</span>&gt; allLines = Files.<span class="fu">readAllLines</span>(input.<span class="fu">toPath</span>());
+<span class="kw">public</span> <span class="dt">void</span> <span class="fu">readFileInBestWay</span>(File input) <span class="kw">throws</span> IOException {
+   List&lt;String&gt; allLines = Files.<span class="fu">readAllLines</span>(input.<span class="fu">toPath</span>());
 }</code></pre></div>
 <h3 id="control-structures-need-braces.">Control-structures need braces.</h3>
 <p>The Java language allows you to write a single statement after control structures such as <code>if</code>, <code>for</code> and <code>while</code>. That means no block is defined using <code>{</code> and <code>}</code>, and only a single statement is affected by the control structure. Since this is often error prone, this should be avoided. The following code fragments contains some examples:</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">for</span> (<span class="dt">int</span> x=<span class="dv">0</span>; x &lt; <span class="dv">10</span>; x++)
-   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The number is &quot;</span>+x);
+   System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The number is &quot;</span>+x);
 
 <span class="kw">if</span> (x&gt;<span class="dv">3</span>)
-   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Greater than three&quot;</span>);
+   System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Greater than three&quot;</span>);
    
 <span class="kw">while</span> (x&lt;<span class="dv">10</span>)
-   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The number is &quot;</span>+x);
+   System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The number is &quot;</span>+x);
    <span class="co">// The following line of code is executed only after the loop finishes!</span>
    <span class="co">// This is a type of mistake we prefer to avoid!</span>
    x++;</code></pre></div>
 <p>The correct version of the above code fragment looks as follows:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">for</span> (<span class="dt">int</span> x=<span class="dv">0</span>; x &lt; <span class="dv">10</span>; x++)
+<pre><code>for (int x=0; x &lt; 10; x++)
 {
-   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The number is &quot;</span>+x);
+   System.out.println(&quot;The number is &quot;+x);
 }
 
-<span class="kw">if</span> (x&gt;<span class="dv">3</span>)
+if (x&gt;3)
 {
-   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Greater than three&quot;</span>);
+   System.out.println(&quot;Greater than three&quot;);
 }
    
-<span class="kw">while</span> (x&lt;<span class="dv">10</span>)
+while (x&lt;10)
 {
-   <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The number is &quot;</span>+x);
-   <span class="co">// Now this is executed in every iteration of the loop.</span>
+   System.out.println(&quot;The number is &quot;+x);
+   // Now this is executed in every iteration of the loop.
    x++;
-}</code></pre></div>
-<h3 id="avoid-shadowing-variables">Avoid shadowing variables</h3>
+}</code></pre>
+<h3 id="avoid-hiding-fields">Avoid hiding fields</h3>
 <p>A variable can have a different scope, depending on the location is where it is defined. Variables defined within the class are instance variables and are part of objects, while variables defined as parameters of method or constructors only live while that method or constructor is executed. We should avoid using the same name at different levels within the same class if this causes potential confusing, as the class level variable is hidden/shadowed. The following fragment contains an example of instance variable shadowing:</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> MyClass {
 
@@ -251,21 +273,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
    
    <span class="kw">public</span> <span class="fu">MyClass</span>(<span class="dt">int</span> someNumber, <span class="dt">int</span> anotherNumber) {
       <span class="co">// This assigns a new value to the parameter, but not to the instance variable!!</span>
-     <span class="co">// This is likely a mistake</span>
-     someNumber = anotherNumber + <span class="dv">5</span>;
-     anotherNumber = someNumber + <span class="dv">3</span>;
+      <span class="co">// This is likely a mistake</span>
+      someNumber = anotherNumber + <span class="dv">5</span>;
+      anotherNumber = someNumber + <span class="dv">3</span>;
    }
 }</code></pre></div>
 <p>The constructor mentioned can be written as follows:</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">   <span class="kw">public</span> <span class="fu">MyClass</span>(<span class="dt">int</span> firstNumber, <span class="dt">int</span> secondNumber) {
-     someNumber = secondNumber + <span class="dv">5</span>;
-     anotherNumber = firstNumber + <span class="dv">3</span>;
+      someNumber = secondNumber + <span class="dv">5</span>;
+      anotherNumber = firstNumber + <span class="dv">3</span>;
    }</code></pre></div>
 <p>Alternatively, the following is allowed as well:</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">   <span class="kw">public</span> <span class="fu">MyClass</span>(<span class="dt">int</span> someNumber, <span class="dt">int</span> anotherNumber) {
-     <span class="co">// With the explicit this reference, the can be no confusion!</span>
-     <span class="kw">this</span>.<span class="fu">someNumber</span> = anotherNumber + <span class="dv">5</span>;
-     <span class="kw">this</span>.<span class="fu">anotherNumber</span> = someNumber + <span class="dv">3</span>;
+      <span class="co">// With the explicit this reference, the can be no confusion!</span>
+      <span class="kw">this</span>.<span class="fu">someNumber</span> = anotherNumber + <span class="dv">5</span>;
+      <span class="kw">this</span>.<span class="fu">anotherNumber</span> = someNumber + <span class="dv">3</span>;
    }</code></pre></div>
 <h3 id="refrain-from-using-inner-assignments">Refrain from using inner assignments</h3>
 <p>In programs we often want to update the value of variable. We should always do this using an assignment statement, for example <code>x = 5;</code>, <code>x++;</code> or <code>x -= 2;</code>. However, in the syntax of Java assignments are also considered expressions. Thus something like <code>x = (y = 5) + 3;</code> is also valid, and assigns the value <code>5</code> to variable <code>y</code> and the value <code>8</code> to variable <code>x</code>. These constructs are error-prone, and often lead to mistakes, in particular when accidentally used in an <code>if</code> or <code>while</code> construction. For example, the following code fragment never terminates:</p>
@@ -299,19 +321,206 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <span class="co">// The above fragment can be simplified to a single line:</span>
 <span class="kw">return</span> !<span class="fu">checkSomething</span>();</code></pre></div>
+<h3 id="usetrywithresources">UseTryWithResources</h3>
+<p>Java 7 introduced the try-with-resources statement. This statement ensures that each resource is closed at the end of the statement, which is important to avoid bugs around resources that are not properly closed. It avoids the need of explicitly closing the resources in a finally block. Additionally exceptions are better handled: If an exception occurred both in the <code>try</code> block and <code>finally</code> block, then the exception from the try block was suppressed. With the <code>try</code>-with-resources statement, the exception thrown from the try-block is preserved.</p>
+<p>For example, the code</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">InputStream in = <span class="kw">null</span>;
+<span class="kw">try</span> {
+    in = <span class="fu">openInputStream</span>();
+    <span class="dt">int</span> i = in.<span class="fu">read</span>();
+} <span class="kw">catch</span> (IOException e) {
+    e.<span class="fu">printStackTrace</span>();
+} <span class="kw">finally</span> {
+    <span class="kw">try</span> {
+        <span class="kw">if</span> (in != <span class="kw">null</span>) in.<span class="fu">close</span>();
+    } <span class="kw">catch</span> (IOException ignored) {
+        <span class="co">// ignored</span>
+    }
+}</code></pre></div>
+<p>is better written as:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// better use try-with-resources</span>
+<span class="kw">try</span> (InputStream in2 = <span class="fu">openInputStream</span>()) {
+    <span class="dt">int</span> i = in2.<span class="fu">read</span>();
+}</code></pre></div>
+<h3 id="equalsnull">EqualsNull</h3>
+<p>Tests for null should not use the equals() method, as it could result in an <code>NullPointerException</code>. The <code>==</code> operator should be used instead.</p>
+<p>Rather than writing</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">String x = <span class="st">&quot;foo&quot;</span>;
+
+<span class="kw">if</span> (x.<span class="fu">equals</span>(<span class="kw">null</span>)) {
+    <span class="fu">doSomething</span>();
+}</code></pre></div>
+<p>it is better to write</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">if</span> (x == <span class="kw">null</span>) {
+    <span class="fu">doSomething</span>();
+}</code></pre></div>
+<h3 id="unusedprivatemethod">UnusedPrivateMethod</h3>
+<p>If a private method is declared but never used within the same class, there is no way that code can ever be executed. It can be deleted from the program safely, and it is cleaner to do so.</p>
+<h3 id="unconditionalifstatement">UnconditionalIfStatement</h3>
+<p>Do not use &quot;if&quot; statements whose conditionals are always true or always false. Such statements can be removed to produce cleaner and shorter code.</p>
+<p>For example, if statement such as the following ones should be avoided:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">if</span> (<span class="kw">true</span>) {
+    <span class="co">// This part is always executed</span>
+}
+
+<span class="kw">if</span> (<span class="dv">2</span>&lt;<span class="dv">1</span>) {
+    <span class="co">// This part is never executed</span>
+}</code></pre></div>
+<h3 id="nonstaticinitializer">NonStaticInitializer</h3>
+<p>A non-static initializer block will be called any time a constructor is invoked (just prior to invoking the constructor). As this is an obscure and confusing language construct, it should be avoided.</p>
+<p>An example:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> MyClass {
+  <span class="co">// this block gets run before any call to a constructor</span>
+  {
+    System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;I am about to construct myself&quot;</span>);
+  }
+}</code></pre></div>
+<h3 id="uselessoperationonimmutable">UselessOperationOnImmutable</h3>
+<p>An operation on an Immutable object (String, BigDecimal or BigInteger) won't change the object itself since the result of the operation is a new object. Therefore, ignoring the operation result is an error.</p>
+<p>For example, the following code</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">BigInteger bi = BigInteger.<span class="fu">valueOf</span>(<span class="dv">10</span>);
+<span class="co">// the new object created in the next line is immediately forgotten</span>
+bi.<span class="fu">add</span>(BigInteger.<span class="fu">valueOf</span>(<span class="dv">5</span>));</code></pre></div>
+<p>is probably an incorrect version of the following code:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">BigInteger bi = <span class="kw">new</span> BigInteger.<span class="fu">valueOf</span>(<span class="dv">10</span>);
+<span class="co">// the next object created in now store in the variable</span>
+bi = bi.<span class="fu">add</span>(BigInteger.<span class="fu">valueOf</span>(<span class="dv">5</span>));</code></pre></div>
+<h3 id="jumbledincrementer">JumbledIncrementer</h3>
+<p>Avoid jumbled loop incrementers in for-loops. This is usually a mistake, and is confusing even if intentional.</p>
+<p>For example, the inner loop in the following example is not allowed</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// Th outer loop only references &#39;i&#39; and is okay</span>
+<span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">10</span>; i++) {
+    <span class="co">// The inner loop references both &#39;i&#39; and &#39;k&#39; and is not allowed</span>
+    <span class="kw">for</span> (<span class="dt">int</span> k = <span class="dv">0</span>; k &lt; <span class="dv">20</span>; i++) {
+        System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello&quot;</span>);
+    }
+}</code></pre></div>
+<h3 id="unusedprivatefield">UnusedPrivateField</h3>
+<p>Detects when a private field is declared and/or assigned a value, but not used. If such a field is never used, this usually means it can be removed without any problems.</p>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Something {
+    <span class="co">// The next two fields are never used</span>
+    <span class="kw">private</span> <span class="dt">static</span> <span class="dt">int</span> FOO = <span class="dv">2</span>;
+    <span class="kw">private</span> <span class="dt">int</span> i = <span class="dv">5</span>;
+    <span class="co">// The next field is used (in the addOne() method)</span>
+    <span class="kw">private</span> <span class="dt">int</span> j = <span class="dv">6</span>;
+    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">addOne</span>() {
+        <span class="kw">return</span> j++;
+    }
+}</code></pre></div>
+<h3 id="forloopshouldbewhileloop">ForLoopShouldBeWhileLoop</h3>
+<p>Some for loops can be simplified to while loops, this makes them more concise.</p>
+<p>For example:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">for</span> (;<span class="kw">true</span>;) {
+    <span class="co">// Do something</span>
+}</code></pre></div>
+<p>can be replaced by the simpler</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">while</span> (<span class="kw">true</span>) {
+    <span class="co">// Do something</span>
+}</code></pre></div>
+<h3 id="useequalstocomparestrings">UseEqualsToCompareStrings</h3>
+<p>Using '==' or '!=' to compare strings only works if intern versions are used on both sides, a topic that is not covered in this course. Therefore, you should always use the equals() method instead.</p>
+<p>The following code is usually unreliable</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">if</span> (s == <span class="st">&quot;one&quot;</span>) {
+    <span class="co">// Do something</span>
+}</code></pre></div>
+<p>and should be replaced by</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">if</span> (<span class="st">&quot;one&quot;</span>.<span class="fu">equals</span>(s)) {
+    <span class="co">// Do something</span>
+}</code></pre></div>
+<h3 id="returnfromfinallyblock">ReturnFromFinallyBlock</h3>
+<p>In this course, there is no real need to use <code>finally</code> blocks (since you can use the <em>try-with-resources</em>). If you still decide to use <code>finally</code> block, you should avoid returning from it as this can discard exceptions.</p>
+<p>Thus, the following should be avoided:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> String <span class="fu">foo</span>() {
+    <span class="kw">try</span> {
+        <span class="kw">throw</span> <span class="kw">new</span> Exception( <span class="st">&quot;My Exception&quot;</span> );
+    } <span class="kw">catch</span> (Exception e) {
+        <span class="kw">throw</span> e;
+    } <span class="kw">finally</span> {
+        <span class="co">// return not recommended here</span>
+        <span class="kw">return</span> <span class="st">&quot;A. O. K.&quot;</span>; 
+    }
+}</code></pre></div>
+<h3 id="forloopcanbeforeach">ForLoopCanBeForeach</h3>
+<p>Reports loops that can be safely replaced with the enhanced for loop, (i.e. the for-each loop) syntax. The rule considers loops over lists, arrays and iterators. A loop is safe to replace if it only uses the index variable to access an element of the list or array, only has one update statement, and loops through <em>every</em> element of the list or array left to right. In those cases, we prefer to use the enhanced for-loop as it is more concise and less error-prone.</p>
+<p>Thus the following regular for-loop will trigger this rule</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">loop</span>(List&lt;String&gt; lst) {
+    <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; lst.<span class="fu">size</span>(); i++) {
+      System.<span class="fu">out</span>.<span class="fu">println</span>(lst.<span class="fu">get</span>(i));
+    }
+}</code></pre></div>
+<p>and can be safely replaced by</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">loop</span>(List&lt;String&gt; lst) {
+    <span class="kw">for</span> (String s : lst) {
+      System.<span class="fu">out</span>.<span class="fu">println</span>(s);
+    }
+}</code></pre></div>
+<h3 id="unusedlocalvariable">UnusedLocalVariable</h3>
+<p>Detects when a local variable is declared and/or assigned, but not used. In such cases, the variable assignment can usually be removed.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">printSomething</span>() {
+    <span class="co">// The local variable i is unused</span>
+    <span class="dt">int</span> i = <span class="dv">5</span>;
+    System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;something&quot;</span>);
+}</code></pre></div>
+<h3 id="singularfield">SingularField</h3>
+<p>Fields whose scopes are limited to just single methods do not rely on the containing object to provide them to other methods. They may be better implemented as local variables within those methods.</p>
+<p>The following example</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Foo {
+    <span class="co">// no reason to exist at the Foo instance level</span>
+    <span class="kw">private</span> <span class="dt">int</span> x;
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">add</span>(<span class="dt">int</span> y) {
+     x = y + <span class="dv">5</span>;
+     <span class="kw">return</span> x;
+    }
+}</code></pre></div>
+<p>should be implemented as follows, since <code>x</code> is only used in the method <code>add</code></p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Foo {
+     <span class="kw">public</span> <span class="dt">void</span> <span class="fu">add</span>(<span class="dt">int</span> y) {
+     <span class="dt">int</span> x = y + <span class="dv">5</span>;
+     <span class="kw">return</span> x;
+    }
+}</code></pre></div>
+<h3 id="closeresource">CloseResource</h3>
+<p>Ensure that resources (like <code>java.io.FileInputStream</code>, i.e. objects and any subtype of <code>java.lang.AutoCloseable</code>) are always closed after use. Failing to do so might result in resource leaks, that may result in strange bugs and errors in more serious programs.</p>
+<p>Avoid the following:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">withFile</span>() {
+    InputStream file = <span class="kw">new</span> FileInputStream(<span class="kw">new</span> File(<span class="st">&quot;myfile.txt&quot;</span>));
+    <span class="kw">try</span> {
+        <span class="dt">int</span> c = file.<span class="fu">in</span>();
+    } <span class="kw">catch</span> (IOException e) {
+        <span class="co">// handle exception</span>
+    }
+}</code></pre></div>
+<p>but us a <em>try-with-resources</em> block instead.</p>
+<h3 id="extendsobject">ExtendsObject</h3>
+<p>There is no need to explicitly extend Object, as any class that does not explicitly extend another class extends <code>Object</code> implicitly.</p>
+<h3 id="misplacednullcheck">MisplacedNullCheck</h3>
+<p>Checks if a null check is misplaced. If the variable is <code>null</code> a <code>NullPointerException</code> will be thrown. Either the check is useless (the variable will never be &quot;null&quot;) or it is incorrect.</p>
+<p>The following are examples of <code>null</code> checks that are incorrect:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">wrong1</span>(String a, String baz) {
+    <span class="kw">if</span> (a.<span class="fu">equals</span>(baz) &amp;&amp; a != <span class="kw">null</span>) {}
+}
+
+<span class="kw">public</span> <span class="dt">void</span> <span class="fu">wrong2</span>(String a, String baz) {
+        <span class="kw">if</span> (a.<span class="fu">equals</span>(baz) || a == <span class="kw">null</span>) {}
+    }</code></pre></div>
+<h3 id="brokennullcheck">BrokenNullCheck</h3>
+<p>Looks for null checks that are broken since they will throw a <code>NullPointerException</code> themselves. It is likely that you used <code>||</code> instead of <code>&amp;&amp;</code> or vice versa.</p>
+<p>Examples:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> String <span class="fu">bar</span>(String text) {
+    <span class="co">// should be &amp;&amp;</span>
+    <span class="kw">if</span> (text!=<span class="kw">null</span> || !text.<span class="fu">equals</span>(<span class="st">&quot;&quot;</span>)) {
+        <span class="kw">return</span> text;
+    }
+    <span class="co">// should be ||</span>
+    <span class="kw">if</span> (text==<span class="kw">null</span> &amp;&amp; text.<span class="fu">equals</span>(<span class="st">&quot;&quot;</span>)) {
+        <span class="kw">return</span> text;
+    }
+    <span class="kw">return</span> <span class="st">&quot;&quot;</span>;
+}</code></pre></div>
 <h2 id="indications-of-sloppy-code">Indications of sloppy code</h2>
-<p>These rules are not necessarily error prone, but they look sloppy or are distracting to other programmers when they want to read your code. It makes code more difficult to understand, and therefore more difficult to spot bugs in the code.</p>
-<p>Relevant rules:</p>
-<ul>
-<li><a href="https://checkstyle.sourceforge.io/config_blocks.html#EmptyBlock">EmptyBlock</a></li>
-<li><a href="https://checkstyle.sourceforge.io/config_coding.html#EmptyStatement">EmptyStatement</a></li>
-<li><a href="https://checkstyle.sourceforge.io/config_coding.html#IllegalThrows">IllegalThrows</a></li>
-<li><a href="https://checkstyle.sourceforge.io/config_coding.html#IllegalCatch">IllegalCatch</a></li>
-<li><a href="https://checkstyle.sourceforge.io/config_coding.html#IllegalType">IllegalType</a></li>
-<li><a href="https://checkstyle.sourceforge.io/config_imports.html#UnusedImports">UnusedImports</a></li>
-<li><a href="https://checkstyle.sourceforge.io/config_misc.html#TodoComment">TodoComment</a></li>
-<li><a href="https://checkstyle.sourceforge.io/config_misc.html#UncommentedMain">UncommentedMain</a></li>
-</ul>
+<p>The rules in this section are typically just sloppy: they distract other people who try to understand your code from what is important. Therefore, you should avoid having them in your code, but they are not considered as severe as the other rules.</p>
+<p>Relevant external links to these rules: * <a href="https://checkstyle.sourceforge.io/config_blocks.html#EmptyBlock">EmptyBlock</a> * <a href="https://checkstyle.sourceforge.io/config_coding.html#EmptyStatement">EmptyStatement</a> * <a href="https://checkstyle.sourceforge.io/config_coding.html#IllegalThrows">IllegalThrows</a> * <a href="https://checkstyle.sourceforge.io/config_coding.html#IllegalCatch">IllegalCatch</a> * <a href="https://checkstyle.sourceforge.io/config_coding.html#IllegalType">IllegalType</a> * <a href="https://checkstyle.sourceforge.io/config_imports.html#UnusedImports">UnusedImports</a> * <a href="https://checkstyle.sourceforge.io/config_misc.html#TodoComment">TodoComment</a> * <a href="https://checkstyle.sourceforge.io/config_misc.html#UncommentedMain">UncommentedMain</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#idempotentoperations">IdempotentOperations</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#missingbreakinswitch">MissingBreakInSwitch</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#duplicateimports">DuplicateImports</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#doublebraceinitialization">DoubleBraceInitialization</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#switchstmtsshouldhavedefault">SwitchStmtsShouldHaveDefault</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#unusednullcheckinequals">UnusedNullCheckInEquals</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#unusedimports">UnusedImports</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#unnecessaryreturn">UnnecessaryReturn</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#avoidcatchingthrowable">AvoidCatchingThrowable</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#avoidcatchingnpe">AvoidCatchingNPE</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#whileloopwithliteralboolean">WhileLoopWithLiteralBoolean</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#dontimportjavalang">DontImportJavaLang</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_design.html#abstractclasswithoutanymethod">AbstractClassWithoutAnyMethod</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#uselessparentheses">UselessParentheses</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#usediamondoperator">UseDiamondOperator</a></p>
 <h3 id="avoid-empty-blocks">Avoid Empty Blocks</h3>
 <p>Empty blocks are typically an indication the structure of your program can be improved or simplified. They distract from the actual logic of your program. Therefore, you should avoid these. Often, empty blocks that may seem <em>logical</em> can be avoided by rewriting <code>boolean</code> expressions. For example. the following pattern:</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> x = <span class="fu">computeX</span>();
@@ -333,7 +542,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3 id="avoid-empty-statements">Avoid Empty Statements</h3>
 <p>Empty statement do nothing, and are therefore clutter in your code. They are causes by having unnecessary semi-colons and should be avoided. The following code fragment contains an example:</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// Note the double semi-colon that results in an empty statement.</span>
-<span class="dt">int</span> b = <span class="dv">3</span>+<span class="dv">5</span>;;</code></pre></div>
+<span class="dt">int</span> b = <span class="dv">3+5</span>;;</code></pre></div>
 <h3 id="avoid-catching-or-throwing-exception-types-that-are-too-general">Avoid catching or throwing exception types that are too general</h3>
 <p>When you catch an exception, you should catch an exception that is specific enough. Exception types that are too general, should not be could. Therefore, it is not allowed to catch exception of type <code>Error</code>, <code>Exception</code>, <code>Throwable</code> or <code>RuntimeException</code>. Similar, you should not define method headers that mention one of these exception types after the <code>throws</code> keyword. If you catch exceptions that are too general, there is a risk that you catch exceptions you did not expect: this can make debugging a lot more complicated (in particular if the exception is ignored). If your method throws exceptions of a type that is too general, it is highly likely the users of that method do not have enough information about the potential causes of that exception, and what they can do to avoid or handle those exceptions.</p>
 <h3 id="collections-api-use-the-interfaces-as-types">Collections API: use the interfaces as types</h3>
@@ -341,34 +550,34 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> MyClass {
    
    <span class="co">// This is not allowed</span>
-   <span class="kw">private</span> <span class="bu">ArrayList</span>&lt;<span class="bu">String</span>&gt; lines;
+   <span class="kw">private</span> ArrayList&lt;String&gt; lines;
 
    <span class="kw">public</span> <span class="fu">MyClass</span>() {
       <span class="co">// It is always allowed (and in fact necessary) to call the constructor</span>
-     <span class="co">// of concrete Collections API types.</span>
-      <span class="kw">this</span>.<span class="fu">lines</span> = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();
+      <span class="co">// of concrete Collections API types.</span>
+      <span class="kw">this</span>.<span class="fu">lines</span> = <span class="kw">new</span> ArrayList&lt;&gt;();
    }
    
    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">doSomething</span>() {
       <span class="co">// The type of this variable is also not an interface type</span>
-      <span class="bu">TreeSet</span>&lt;<span class="bu">String</span>&gt; mySet = <span class="kw">new</span> <span class="bu">TreeSet</span>&lt;&gt;();
+      TreeSet&lt;String&gt; mySet = <span class="kw">new</span> TreeSet&lt;&gt;();
    }
 }</code></pre></div>
 <p>To fix this example, it should be as follows:</p>
 <div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> MyClass {
    
    <span class="co">// The correct interface type is List</span>
-   <span class="kw">private</span> <span class="bu">List</span>&lt;<span class="bu">String</span>&gt; lines;
+   <span class="kw">private</span> List&lt;String&gt; lines;
 
    <span class="kw">public</span> <span class="fu">MyClass</span>() {
       <span class="co">// It is always allowed (and in fact necessary) to call the constructor</span>
-     <span class="co">// of concrete Collections API types.</span>
-      <span class="kw">this</span>.<span class="fu">lines</span> = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();
+      <span class="co">// of concrete Collections API types.</span>
+      <span class="kw">this</span>.<span class="fu">lines</span> = <span class="kw">new</span> ArrayList&lt;&gt;();
    }
    
    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">doSomething</span>() {
       <span class="co">// For a TreeSet, we can use either Set or SortedSet as the interface type.</span>
-      <span class="bu">SortedSet</span>&lt;<span class="bu">String</span>&gt; mySet = <span class="kw">new</span> <span class="bu">TreeSet</span>&lt;&gt;();
+      SortedSet&lt;String&gt; mySet = <span class="kw">new</span> TreeSet&lt;&gt;();
    }
 }</code></pre></div>
 <h3 id="avoid-defining-unused-imports">Avoid defining unused imports</h3>
@@ -378,6 +587,193 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3 id="only-define-a-main-method-in-classes-that-have-a-name-ending-with-main">Only define a main method in classes that have a name ending with Main</h3>
 <p>Often it is useful to define <code>main</code> methods in classes to test whether they work as expected or not. In your final code, however, it is best to litter classes with testing code that is irrelevant to the user of that class. Therefore, only classes that are designed to contain a <code>main</code> method to be used by the end-user should contain a <code>main</code> method. These classes should have a name that ends with <code>Main</code>.</p>
 <p>Note that in the assignments of FEB22012 Programming, you are typically not required to hand in your own <code>main</code> method, unless this is stated otherwise.</p>
+<h3 id="idempotentoperations">IdempotentOperations</h3>
+<p>Avoid idempotent operations - these are operations have no effect and can thus be removed.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> x = <span class="dv">2</span>;
+x = x;</code></pre></div>
+<h3 id="missingbreakinswitch">MissingBreakInSwitch</h3>
+<p>You can always avoid using <code>switch</code> statements by replacing them with multiple <code>if</code>, <code>else-if</code>, <code>else</code> statements. If you like to use a <code>switch</code> statement instead, make sure that each case option has a break or return statement. Failing to do so may indicate problematic behaviour. Empty cases are ignored as these indicate an intentional fall-through.</p>
+<p>Examples:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">switch</span>(status) {
+  <span class="kw">case</span> CANCELLED:
+    <span class="fu">doCancelled</span>();
+    <span class="co">// break; hm, should this be commented out?</span>
+  <span class="kw">case</span> NEW:
+    <span class="fu">doNew</span>();
+    <span class="co">// is this really a fall-through?</span>
+  <span class="kw">case</span> REMOVED:
+    <span class="fu">doRemoved</span>();
+    <span class="co">// what happens if you add another case after this one?</span>
+  <span class="kw">case</span> OTHER: <span class="co">// empty case - this is interpreted as an intentional fall-through</span>
+  <span class="kw">case</span> ERROR:
+    <span class="fu">doErrorHandling</span>();
+    <span class="kw">break</span>;
+}</code></pre></div>
+<h3 id="switchstmtsshouldhavedefault">SwitchStmtsShouldHaveDefault</h3>
+<p>All switch statements should include a default option to catch any unspecified values.</p>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">bar</span>(<span class="dt">int</span> x) {
+    <span class="kw">switch</span> (x) {
+      <span class="kw">case</span> <span class="dv">1</span>: <span class="dt">int</span> j = <span class="dv">6</span>;
+      <span class="kw">case</span> <span class="dv">2</span>: <span class="dt">int</span> j = <span class="dv">8</span>;
+          <span class="co">// missing default: here</span>
+    }
+}</code></pre></div>
+<h3 id="duplicateimports">DuplicateImports</h3>
+<p>Duplicate or overlapping import statements should be avoided.</p>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import java.lang.String;</span>
+<span class="kw">import java.lang.*;</span>
+<span class="kw">public</span> <span class="kw">class</span> Foo {}</code></pre></div>
+<h3 id="doublebraceinitialization">DoubleBraceInitialization</h3>
+<p>Double brace initialisation is a pattern to initialise eg collections concisely. But it implicitly generates a new <code>.class</code> file, and the object holds a strong reference to the enclosing object. For those reasons, it is preferable to initialize the object normally, even though it's more verbose.</p>
+<p>Since you never need inner classes or initializer blocks in this course, the following examples</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// this is double-brace initialization</span>
+<span class="kw">return</span> <span class="kw">new</span> ArrayList&lt;String&gt;(){{ <span class="fu">addAll</span>(<span class="st">&quot;a&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>); }};</code></pre></div>
+<p>should be written as</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// the better way is to not create an anonymous class:</span>
+List&lt;String&gt; a = <span class="kw">new</span> ArrayList&lt;&gt;();
+a.<span class="fu">addAll</span>(<span class="st">&quot;a&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>);
+<span class="kw">return</span> a;</code></pre></div>
+<p>Alternatively, it may be an option to use <code>Arrays.listOf(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)</code> or <code>List.of(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</code> in Java versions where this is supported.</p>
+<h3 id="unnecessaryreturn">UnnecessaryReturn</h3>
+<p>Avoid the use of unnecessary return statements. These are typically return statements at the end of a <code>void</code> method.</p>
+<p>For example, the return statement in the following method can be omitted:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">bar</span>() {
+    <span class="dt">int</span> x = <span class="dv">42</span>;
+    <span class="kw">return</span>;
+}</code></pre></div>
+<h3 id="avoidcatchingthrowable">AvoidCatchingThrowable</h3>
+<p>Catching Throwable errors is not recommended since its scope is very broad. It includes runtime issues such as OutOfMemoryError that should be exposed and managed separately.</p>
+<p>For example:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">bar</span>() {
+    <span class="kw">try</span> {
+        <span class="co">// do something</span>
+    } <span class="kw">catch</span> (Throwable th) {  <span class="co">// should not catch Throwable</span>
+        th.<span class="fu">printStackTrace</span>();
+    }
+}</code></pre></div>
+<h3 id="avoidcatchingnpe">AvoidCatchingNPE</h3>
+<p>Code should never throw NullPointerExceptions under normal circumstances; if it does, you should typically change the code to avoid this. A catch block that catches <code>NullPointerException</code> may hide the original error, causing other, more subtle problems in the problem as well.</p>
+<p>For example:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Foo {
+    <span class="dt">void</span> <span class="fu">bar</span>() {
+        <span class="kw">try</span> {
+            <span class="co">// do something</span>
+        } <span class="kw">catch</span> (NullPointerException npe) { <span class="co">// Avoid doing this</span>
+        }
+    }
+}</code></pre></div>
+<h3 id="whileloopwithliteralboolean">WhileLoopWithLiteralBoolean</h3>
+<p><code>do {} while (true);</code> requires reading the end of the statement before it is apparent that it loops forever, whereas <code>while (true) {}</code> is easier to understand.</p>
+<p><code>do {} while (false);</code> is redundant, and if an inner variable scope is required, a block <code>{}</code> is sufficient.</p>
+<p><code>while (false) {}</code> will never execute the block and can be removed in its entirety.</p>
+<p><strong>Examples:</strong></p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Example {
+  {
+    <span class="kw">while</span> (<span class="kw">true</span>) { } <span class="co">// allowed</span>
+    <span class="kw">while</span> (<span class="kw">false</span>) { } <span class="co">// disallowed</span>
+    <span class="kw">do</span> { } <span class="kw">while</span> (<span class="kw">true</span>); <span class="co">// disallowed</span>
+    <span class="kw">do</span> { } <span class="kw">while</span> (<span class="kw">false</span>); <span class="co">// disallowed</span>
+  }
+}</code></pre></div>
+<h3 id="dontimportjavalang">DontImportJavaLang</h3>
+<p>Avoid importing anything from the package 'java.lang'. These classes are automatically imported.</p>
+<p>For example:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import java.lang.String;</span>    <span class="co">// this is unnecessary</span>
+<span class="kw">import java.lang.*;</span>         <span class="co">// this is bad</span></code></pre></div>
+<h3 id="abstractclasswithoutanymethod">AbstractClassWithoutAnyMethod</h3>
+<p>If an abstract class does not provides any methods, it may be acting as a simple data container that is not meant to be instantiated. In this case, it is probably better to use a private or protected constructor in order to prevent instantiation than make the class misleadingly abstract.</p>
+<p>For example:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// This abstract class has no methods, make it a regular class instead</span>
+<span class="kw">public</span> <span class="kw">abstract</span> <span class="kw">class</span> Example {
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> String BRAND = <span class="st">&quot;Fancy Brand&quot;</span>;
+    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">int</span> BRAND_YEAR = <span class="dv">2019</span>;
+}</code></pre></div>
+<h3 id="uselessparentheses">UselessParentheses</h3>
+<p>Trivial cases of useless parentheses should be removed as they clutter the code. Note that in mathematical expressions, unnecessary parentheses are allowed if they make the formula easier to understand.</p>
+<p>For example</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> n = <span class="dv">5</span>;
+Integer i = Integer.<span class="fu">valueOf</span>((n));
+Integer o = (n);</code></pre></div>
+<p>can be written as</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> n = <span class="dv">5</span>;
+Integer i = Integer.<span class="fu">valueOf</span>(n);
+Integer o = n;</code></pre></div>
+<h3 id="usediamondoperator">UseDiamondOperator</h3>
+<p>Use the diamond operator to let the type be inferred automatically. With the Diamond operator it is possible to avoid duplication of the type parameters. Instead, the compiler is now able to infer the parameter types for constructor calls, which makes the code also more readable.</p>
+<p>Example:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// The following contains an unnecessary duplication of type parameters</span>
+List&lt;String&gt; strings = <span class="kw">new</span> ArrayList&lt;String&gt;();
+<span class="co">// The following uses the diamond operator and is more concise</span>
+List&lt;String&gt; stringsWithDiamond = <span class="kw">new</span> ArrayList&lt;&gt;();</code></pre></div>
+<h2 id="coding-style">Coding style</h2>
+<p>Note that many aspects of coding style can not be checked automatically. In particular, the structure of your program should be reasonable: if it makes sense to introduce additional helper methods, you should. You should also make sure variables have easy to understand names, in particular if they are use in long part of the code.</p>
+<h3 id="naming-conventions">Naming Conventions</h3>
+<p>Java has a number of naming conventions. Adhering to these conventions make sure that other (experienced) Java programmers can understand your code more easily, as things are named as they expect. It is good practice to adhere to these conventions as well.</p>
+<p>An common type of naming used in Java is <a href="https://en.wikipedia.org/wiki/Camel_case">camel case</a>. In <strong>lower camel case</strong> a name starts with a lower case letter, while every new word after the first starts with a capital letter. In most cases, it is allowed to use a number (except for the first symbol of the name). Examples are <code>x</code>, <code>productPrice</code>, <code>student1</code>, <code>course2</code>. This naming style is most common is used for lambda parameters, local variables, instance variables, method names, parameter names and static variable names.</p>
+<p>In <strong>upper camel case</strong> a name start with an upper case letter, while every new word after the first starts with a capital letter. Examples are: <code>Student</code>, <code>BufferedReader</code>, <code>MyTester</code>, etcetera. This style is used for all type names, e.g. class names, interface names, and other types that are not covered in this course, including enums and annotations.</p>
+<p>The naming conventions that are checked are as follows:</p>
+<ul>
+<li><strong>Constants</strong> : constant fields (e.g. those that are both <code>static</code> and <code>final</code>) should have names in capital letters, where words are separated by an underscore. For example <code>SOFTWARE_VERSION</code>, <code>PI</code>, <code>FEIGENBAUM_CONSTANT</code>, etc.</li>
+<li><strong>Lambda parameters</strong> : parameter names of variables used in lambda expressions should have camel case names, with the additional exception that no numbers are allowed. So you can have <code>productPrice</code>, but not <code>product3Price</code>.</li>
+<li><strong>Local (final) variable names</strong> : local variables (regardless of whether they are final) should be in <em>lower camel case</em>.</li>
+<li><strong>Instance variables / member names</strong> : the names of instance variables should be in <em>lower camel case</em>, like local variable names.</li>
+<li><strong>Method names</strong> : the names of methods should be in <em>lower camel case</em> (even if they are static). Constructors always have a name equal to the name of the class, so for constructors the rule for <em>type names</em> applies.</li>
+<li><strong>Parameter names</strong> : the names of parameters (the arguments of a method) should be in <em>lower camel case</em>.</li>
+<li><strong>Static variable names</strong>: the names of static (but non-<code>final</code>) variables should be in <em>lower camel case</em>.</li>
+<li><strong>Type names</strong> : the names of all types, most importantly classes and interfaces, should be in <em>upper camel case</em>.</li>
+</ul>
+<p>Links to relevant naming rules:</p>
+<ul>
+<li><a href="https://checkstyle.sourceforge.io/config_naming.html#ConstantName">ConstantName</a></li>
+<li><a href="https://checkstyle.sourceforge.io/config_naming.html#LambdaParameterName">LambdaParameterName</a></li>
+<li><a href="https://checkstyle.sourceforge.io/config_naming.html#LocalFinalVariableName">LocalFinalVariableName</a></li>
+<li><a href="https://checkstyle.sourceforge.io/config_naming.html#LocalVariableName">LocalVariableName</a></li>
+<li><a href="https://checkstyle.sourceforge.io/config_naming.html#MemberName">MemberName</a></li>
+<li><a href="https://checkstyle.sourceforge.io/config_naming.html#MethodName">MethodName</a></li>
+<li><a href="https://checkstyle.sourceforge.io/config_naming.html#ParameterName">ParameterName</a></li>
+<li><a href="https://checkstyle.sourceforge.io/config_naming.html#StaticVariableName">StaticVariableName</a></li>
+<li><a href="https://checkstyle.sourceforge.io/config_naming.html#TypeName">TypeName</a></li>
+</ul>
+<h3 id="layout-issues">Layout issues</h3>
+<p>First and foremost, it is important to stress that you should pick a consistent indentation style. You can have a look at the <a href="https://en.wikipedia.org/wiki/Indentation_style">Wikipedia page on indentation styles</a>, or use the same style as the book and/or the lectures. Indentation style is checked manually and can impact your grade after the deadline.</p>
+<p>A number of other issues related to layout should also be avoided:</p>
+<ul>
+<li>Avoid adding a space between a method name and the opening parenthesis for the arguments. For example, <code>public void myMethod (int x)</code> is wrong and should be <code>public void myMethod(int x)</code>.</li>
+<li>When spaces are used to separate tokens in the language, avoid using more than a single space. For example, the doubles space in <code>int  x</code> or <code>x ==  y</code> are considered sloppy.</li>
+<li>Make sure that comments are indented at the right level. Check <a href="https://checkstyle.sourceforge.io/config_misc#CommentsIndentation">this page</a> for a number of relevant examples.</li>
+<li>Avoid using trailing comments that are on the same line as the code they are describing. Often they just state the same thing as the line is doing, and if something more complex is explained, it looks cleaner to write this above the section of code that is being described. Trailing comments are comments that look like <code>int x = 5; // assign 5 to variable x</code>.</li>
+<li>Use a single statement for each line. While you can start a new statement directly after a semicolon, it is cleaner to do so on a new line. For example, <code>int x = 5; int y = x + 3;</code> should be put on two lines rather than one.</li>
+<li>Avoid having space symbols just before a line break; these are unnecessary and sloppy.</li>
+<li>When using generic types, e.g. <code>List&lt;String&gt;</code>, make sure that the whitespace around the generic angle brackets <code>&lt;</code> and <code>&gt;</code> is according to the typical convention. This means that when <code>&lt;</code> is used to define a generic type, it should not be preceded by a space if it follows a type name or method, and should never be followed by a space. When <code>&gt;</code> is used in a generic type, it should never be preceded by whitespace and always be followed by whitespace, unless used in a diamond operator. Check <a href="https://checkstyle.sourceforge.io/config_whitespace.html#GenericWhitespace">this page</a> for a number of examples that are correct.</li>
+</ul>
+<p>Links to relevant layout rules:</p>
+<ul>
+<li><a href="https://checkstyle.sourceforge.io/config_whitespace.html#MethodParamPad">MethodParamPad</a></li>
+<li><a href="https://checkstyle.sourceforge.io/config_whitespace.html#GenericWhitespace">GenericWhitespace</a></li>
+<li><a href="https://checkstyle.sourceforge.io/config_whitespace.html#SingleSpaceSeparator">SingleSpaceSeparator</a></li>
+<li><a href="https://checkstyle.sourceforge.io/config_misc#CommentsIndentation">CommentsIndentation</a></li>
+<li><a href="https://checkstyle.sourceforge.io/config_misc#TrailingComment">TrailingComment</a></li>
+<li><a href="https://checkstyle.sourceforge.io/config_coding#OneStatementPerLine">OneStatementPerLine</a></li>
+<li><a href="https://checkstyle.org/config_regexp.html#RegexpSingleline">RegexpSingleline</a></li>
+</ul>
+<h3 id="other-naming-issues">Other naming issues</h3>
+<p>There are a number of issues related to names that you should usually avoid, as they are confusing. These issues are:</p>
+<ul>
+<li>Don't use the names <code>hashcode()</code> and <code>equals()</code> for methods other than methods that do not override the methods with similar or the same name from the <code>Object</code> class.</li>
+<li>Avoid defining fields or instance variables that have the same name as the class. For example, in a class called <code>Student</code> you should avoid defining a field or instance variables with the name <code>student</code>.</li>
+<li>Avoid using dollar signs in variable/method/class/interface names.</li>
+<li>Avoid creating non-constructor methods that have the same name as their class. For example, a class <code>Student</code> should not define a method <code>public void Student()</code> as it is a non-constructor method. A constructor such as <code>public Student()</code> is allowed.</li>
+</ul>
+<p>Links to rules related to some naming issues:</p>
+<ul>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#suspicioushashcodemethodname">SuspiciousHashcodeMethodName</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#avoidfieldnamematchingtypename">AvoidFieldNameMatchingTypeName</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#suspiciousequalsmethodname">SuspiciousEqualsMethodName</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#avoiddollarsigns">AvoidDollarSigns</a></li>
+<li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#methodwithsamenameasenclosingclass">MethodWithSameNameAsEnclosingClass</a></li>
+</ul>
             </div>
     </div>
   </div>
