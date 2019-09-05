@@ -16,7 +16,6 @@
 	<rule ref="category/java/bestpractices.xml/UseTryWithResources" />
 	<rule ref="category/java/codestyle.xml/ExtendsObject" />
 	<rule ref="category/java/codestyle.xml/ForLoopShouldBeWhileLoop" />
-	<rule ref="category/java/design.xml/AvoidThrowingNullPointerException" />
 	<rule ref="category/java/design.xml/SingularField" />
 	<rule ref="category/java/design.xml/UselessOverridingMethod" />
 	<rule ref="category/java/errorprone.xml/BrokenNullCheck" />
@@ -45,7 +44,6 @@
 	<rule ref="category/java/errorprone.xml/AvoidCatchingThrowable" />
 	<rule ref="category/java/errorprone.xml/IdempotentOperations" />
 	<rule ref="category/java/errorprone.xml/MissingBreakInSwitch" />
-	<rule ref="category/java/errorprone.xml/UnusedNullCheckInEquals" />
 	
 	<!-- Style, Layout and Names -->
 	<rule ref="category/java/codestyle.xml/AvoidDollarSigns" />
