@@ -32,8 +32,9 @@ Relevant links regarding general programming rules:
 ### Proper Javadoc Comments
 
 You should write Javadoc comments to document public *classes* and *methods*. It is not allowed
-to write Javadoc comments in other locations. Regular comments are allowed. The following code
-fragment contains some examples:
+to write Javadoc comments in other locations. Regular comments are allowed.
+We have a [seperate document](javadoc.md) that explains in detail how you should write Javadoc comments during this course.
+The following code fragment contains some examples:
 
 ```{.java}
   @Override
