@@ -72,7 +72,7 @@ A Javadoc comment starts with `/**` and ends with `*/`, whereas a regular multi-
 You should provide a description of the purpose of the class. Furthermore, the Javadoc should contain a line with an `@author`
 tag, followed by your ERNA id (including the letters). After you ERNA id, you should write your name. For example:
 
-```
+```{.java}
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -205,7 +205,7 @@ or `<sup>` and `</sup>` to indicate superscript.
 
 Putting everything together, an example Javadoc comment for the `computeBalanceAfterInterest` method could be:
 
-```
+```{.java}
 	/**
 	 * Computes the balance after applying a given interest rate for a number of periods.
 	 * <p>

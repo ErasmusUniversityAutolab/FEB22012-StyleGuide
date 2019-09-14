@@ -107,22 +107,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>We should use Javadoc to comment the <code>class</code> and all <code>public</code> methods and constructors.</p>
 <h3 id="class-javadoc">Class Javadoc</h3>
 <p>The Javadoc for the class should be put directly before the <code>public class</code> keywords and thus after any import statements. A Javadoc comment starts with <code>/**</code> and ends with <code>*/</code>, whereas a regular multi-line comment starts with <code>/*</code>. You should provide a description of the purpose of the class. Furthermore, the Javadoc should contain a line with an <code>@author</code> tag, followed by your ERNA id (including the letters). After you ERNA id, you should write your name. For example:</p>
-<pre><code>import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import java.util.ArrayList;</span>
+<span class="kw">import java.util.Collections;</span>
+<span class="kw">import java.util.List;</span>
 
-/**
- * This class models a bank account. It holds the name of the owner, the current balance
- * and a list of transactions that were performed on this bank account.
- * 
- * @author 123456ab Paul Bouman
- *
- */
+<span class="co">/**</span>
+<span class="co"> * This class models a bank account. It holds the name of the owner, the current balance</span>
+<span class="co"> * and a list of transactions that were performed on this bank account.</span>
+<span class="co"> * </span>
+<span class="co"> * </span><span class="kw">@author </span><span class="co">123456ab Paul Bouman</span>
+<span class="co"> *</span>
+<span class="co"> */</span>
 
-public class BankAccount
+<span class="kw">public</span> <span class="kw">class</span> BankAccount
 {
-   // Class body here...
-}</code></pre>
+   <span class="co">// Class body here...</span>
+}</code></pre></div>
 <p><strong>Tip: </strong> In Eclipse, you can automatically generate the tags for a class, method or constructor if you put the cursor in the spot where you want to create the Javadoc, type <code>/**</code> and press enter. An example of how this is done can be seen in the screencast below:</p>
 <div class="figure">
 <img src="template-javadoc.gif" alt="Eclipse generating a Javadoc template" />
