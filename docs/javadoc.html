@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="template-css.css" type="text/css" />
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+            <div class="span12">
+            <h1 id="feb22012-programming---javadoc-guide">FEB22012 Programming - Javadoc Guide</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This documents contains a few pointers that explain how to write Javadoc in the FEB22012 Programming course of the Erasmus School of Economics. The main aim of this is that you know where to put the Javadoc in documents in a way that they are accepted by the Code Quality and Style checks.</p>
+<h2 id="examples">Examples</h2>
+<p>Suppose you have written the following class that models a bank account.</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import java.util.ArrayList;</span>
+<span class="kw">import java.util.Collections;</span>
+<span class="kw">import java.util.List;</span>
+
+<span class="kw">public</span> <span class="kw">class</span> BankAccount
+{
+    <span class="kw">private</span> String owner;
+    <span class="kw">private</span> <span class="dt">int</span> balance;
+    <span class="kw">private</span> List&lt;Transaction&gt; transactions;
+    
+    <span class="kw">public</span> <span class="fu">BankAccount</span>(String ownerName, <span class="dt">int</span> initialBalance)
+    {
+        owner = ownerName;
+        balance = initialBalance;
+        transactions = <span class="kw">new</span> ArrayList&lt;&gt;();
+    }
+    
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">withdrawMoney</span>(<span class="dt">int</span> amount) <span class="kw">throws</span> IllegalArgumentException
+    {
+        <span class="kw">if</span> (amount &gt; balance)
+        {
+            <span class="kw">throw</span> <span class="kw">new</span> IllegalArgumentException(<span class="st">&quot;Cannot withdraw &quot;</span>+amount+<span class="st">&quot; with a balance of &quot;</span>+balance);
+        }
+        balance -= amount;
+        Transaction transaction = <span class="kw">new</span> <span class="fu">Transaction</span>(amount, <span class="st">&quot;Withdraw&quot;</span>);
+        transactions.<span class="fu">add</span>(transaction);
+    }
+
+    <span class="kw">public</span> String <span class="fu">getOwner</span>()
+    {
+        <span class="kw">return</span> owner;
+    }
+
+    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">getBalance</span>()
+    {
+        <span class="kw">return</span> balance;
+    }
+
+    <span class="kw">public</span> List&lt;Transaction&gt; <span class="fu">getTransactions</span>()
+    {
+        <span class="kw">return</span> Collections.<span class="fu">unmodifiableList</span>(transactions);
+    }
+    
+    <span class="kw">public</span> <span class="dt">double</span> <span class="fu">computeBalanceAfterInterest</span>(<span class="dt">int</span> periods, <span class="dt">double</span> rate) <span class="kw">throws</span> IllegalArgumentException {
+        <span class="kw">if</span> (periods &lt; <span class="dv">0</span>) {
+            <span class="kw">throw</span> <span class="kw">new</span> IllegalArgumentException(<span class="st">&quot;The number of periods can not be negative&quot;</span>);
+        }
+        <span class="kw">return</span> balance * Math.<span class="fu">pow</span>(<span class="dv">1</span>+rate, periods);
+    }
+}</code></pre></div>
+<p>We should use Javadoc to comment the <code>class</code> and all <code>public</code> methods and constructors.</p>
+<h3 id="class-javadoc">Class Javadoc</h3>
+<p>The Javadoc for the class should be put directly before the <code>public class</code> keywords and thus after any import statements. A Javadoc comment starts with <code>/**</code> and ends with <code>*/</code>, whereas a regular multi-line comment starts with <code>/*</code>. You should provide a description of the purpose of the class. Furthermore, the Javadoc should contain a line with an <code>@author</code> tag, followed by your ERNA id (including the letters). After you ERNA id, you should write your name. For example:</p>
+<pre><code>import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * This class models a bank account. It holds the name of the owner, the current balance
+ * and a list of transactions that were performed on this bank account.
+ * 
+ * @author 123456ab Paul Bouman
+ *
+ */
+
+public class BankAccount
+{
+   // Class body here...
+}</code></pre>
+<p><strong>Tip: </strong> In Eclipse, you can automatically generate the tags for a class, method or constructor if you put the cursor in the spot where you want to create the Javadoc, type <code>/**</code> and press enter. An example of how this is done can be seen in the screencast below:</p>
+<div class="figure">
+<img src="template-javadoc.gif" alt="Eclipse generating a Javadoc template" />
+<p class="caption">Eclipse generating a Javadoc template</p>
+</div>
+<h3 id="constructor-javadoc-and-param-tags">Constructor Javadoc and Param Tags</h3>
+<p>The constructor of the class has two arguments. When we write Javadoc for a constructor, we put it directly before the method heaader of the constructor (and not within the body of the constructor). Note that the comment should be indented at the same level as the method header. At the end of the Javadoc comment, for each argument you should write a <code>@param</code> tag followed by the argument name an a short description of the argument. For example:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">    <span class="co">/**</span>
+<span class="co">     * This constructor stores the name of the owner and the initial balance of the bank account.</span>
+<span class="co">     * By default, the list of transactions associated with the bank account is empty.</span>
+<span class="co">     * </span>
+<span class="co">     * </span><span class="kw">@param ownerName </span><span class="co">the name of the owner of the new bank account</span>
+<span class="co">     * </span><span class="kw">@param initialBalance </span><span class="co">the initial balance of the new bank account</span>
+<span class="co">     */</span>
+    <span class="kw">public</span> <span class="fu">BankAccount</span>(String ownerName, <span class="dt">int</span> initialBalance)
+    {
+        owner = ownerName;
+        balance = initialBalance;
+        transactions = <span class="kw">new</span> ArrayList&lt;&gt;();
+    }</code></pre></div>
+<h3 id="constructors-and-methods-that-may-throw-exceptions">Constructors and Methods that may throw Exceptions</h3>
+<p>The rules for writing Javadoc comments for methods are the same as for constructors: they should be written directly before the header of the method at the same level of indentation. If a method indications it can throw one or more exception types, you should also at <code>@throws</code> tags describing these exceptions at the end of the Javadoc comment, similar to the <code>@param</code> tags for the arguments. For example, the documentation of the <code>withdrawMoney</code> method that can throw an <code>IllegalArgumentException</code> could look as follows:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">    <span class="co">/**</span>
+<span class="co">     * Performs the withdraw money transaction on this bank account. The transaction is only</span>
+<span class="co">     * performed if there is sufficient balance on the account.</span>
+<span class="co">     * </span>
+<span class="co">     * </span><span class="kw">@param amount </span><span class="co">the amount of money to withdraw from the bank account</span>
+<span class="co">     * </span><span class="kw">@throws IllegalArgumentException </span><span class="co">if the amount exceeds the current balance of the account</span>
+<span class="co">     */</span>
+    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">withdrawMoney</span>(<span class="dt">int</span> amount) <span class="kw">throws</span> IllegalArgumentException
+    {
+        <span class="kw">if</span> (amount &gt; balance)
+        {
+            <span class="kw">throw</span> <span class="kw">new</span> IllegalArgumentException(<span class="st">&quot;Cannot withdraw &quot;</span>+amount+<span class="st">&quot; with a balance of &quot;</span>+balance);
+        }
+        balance -= amount;
+        Transaction transaction = <span class="kw">new</span> <span class="fu">Transaction</span>(amount, <span class="st">&quot;Withdraw&quot;</span>);
+        transactions.<span class="fu">add</span>(transaction);
+    }</code></pre></div>
+<h3 id="methods-that-return-something">Methods that return something</h3>
+<p>Up until now we only discussed constructors, that by definition return a reference to the newly constructed object, and a <code>void</code> method. When you write Javadoc comments for a method that produces some result, you should document this result using the <code>@return</code> tag. The <code>getOwner</code>, <code>getBalance</code> and <code>getTransactions</code> methods are methods that return something. They could be documented as follows:</p>
+<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">    <span class="co">/**</span>
+<span class="co">     * Provides the owner associated with this bank account, that was provided during the creation</span>
+<span class="co">     * of this bank account object.</span>
+<span class="co">     * </span>
+<span class="co">     * </span><span class="kw">@return </span><span class="co">the name of the owner of this bank account</span>
+<span class="co">     */</span>
+    <span class="kw">public</span> String <span class="fu">getOwner</span>()
+    {
+        <span class="kw">return</span> owner;
+    }
+
+    <span class="co">/**</span>
+<span class="co">     * Provides the current balance of this bank account. The current balance is the initial balance</span>
+<span class="co">     * provided when the object was created adjusted by succesful transactions involving this bank</span>
+<span class="co">     * account.</span>
+<span class="co">     * </span>
+<span class="co">     * </span><span class="kw">@return </span><span class="co">the current balance of the bank account</span>
+<span class="co">     */</span>
+    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">getBalance</span>()
+    {
+        <span class="kw">return</span> balance;
+    }
+
+    <span class="co">/**</span>
+<span class="co">     * Provides the list of transactions that involve this bank account.</span>
+<span class="co">     * </span>
+<span class="co">     * Note that this list cannot be modified.</span>
+<span class="co">     * </span>
+<span class="co">     * </span><span class="kw">@return </span><span class="co">an unmodifiable list of transactions involving this bank account.</span>
+<span class="co">     */</span>
+    <span class="kw">public</span> List&lt;Transaction&gt; <span class="fu">getTransactions</span>()
+    {
+        <span class="kw">return</span> Collections.<span class="fu">unmodifiableList</span>(transactions);
+    }</code></pre></div>
+<h3 id="putting-it-all-together">Putting it all together</h3>
+<p>The method <code>computerBalanceAfterInterest</code> has arguments, a return value and may throw something. In such a case, for all these aspects of the method documentation should be provided. Since Javadoc can be used to generate automatic documentation, you are allowed to use some simple HTML tags to make the resulting documentation look nicer. Examples are <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code> to indicate the start and end of a paragraph, <code>&lt;em&gt;</code> and <code>&lt;/em&gt;</code> to indicate emphasis, <code>&lt;strong&gt;</code> and <code>&lt;/strong&gt;</code> to indicate very important text, or <code>&lt;sup&gt;</code> and <code>&lt;/sup&gt;</code> to indicate superscript.</p>
+<p><strong>Note</strong> that in our course it is fine if you only write regular text in your Javadoc comments.</p>
+<p>Putting everything together, an example Javadoc comment for the <code>computeBalanceAfterInterest</code> method could be:</p>
+<pre><code>    /**
+     * Computes the balance after applying a given interest rate for a number of periods.
+     * &lt;p&gt;
+     * It is assumed that interest is paid at the end of each period, and that the interest is compounded.
+     * &lt;/p&gt;
+     * &lt;p&gt;
+     * The formula used for this is: balance &amp;times; (1 + rate)&lt;sup&gt;periods&lt;/sup&gt;
+     * &lt;/p&gt;
+     * &lt;p&gt;
+     * &lt;strong&gt;Example:&lt;/strong&gt; a bank account with a balance of 100 will become 110.25 after applying an interest
+     * of 0.05 for two periods.
+     * &lt;/p&gt; 
+     * 
+     * @param periods the number of periods in which interest should be applied
+     * @param rate the interest rate applied in every period
+     * @return the balanced after the interest is applied for the number of periods to the current balance 
+     * @throws IllegalArgumentException if periods is smaller than zero
+     */
+    public double computeBalanceAfterInterest(int periods, double rate) throws IllegalArgumentException {
+        if (periods &lt; 0) {
+            throw new IllegalArgumentException(&quot;The number of periods can not be negative&quot;);
+        }
+        return balance * Math.pow(1+rate, periods);
+    }</code></pre>
+<h2 id="using-javadoc">Using Javadoc</h2>
+<p>Javadoc has two advantages: when you browser through an Auto-complete popup in Eclipse to find a method you want to call, the Javadoc comments are automatically displayed, giving you useful information on what the method does and how you can use it.</p>
+<p>Futhermore, you can use the <code>javadoc</code> tool that comes with the Java Developer Kit to generate nice looking documentation of your classes based on the Javadoc comments you wrote. An example of how this looks for the <code>BankAccount</code> <a href="BankAccount.html">can be seen here</a>.</p>
+<p>In Eclipse you can use the Javadoc tool via the <code>File</code> menu under the option <code>Export...</code>. In that menu, you must open the <code>Java</code> category and choose <code>Javadoc</code>. In the next dialog you must make sure the <code>javadoc</code> tool is selected. If it is not automatically selected, you should click <code>Configure</code> and point it to the <code>javadoc.exe</code> file in the <code>bin</code> folder of your JDK installation. Finally, you can click <code>Finish</code>. Now the documentation is generated in a <code>doc</code> folder within your project. Open the <code>index.html</code> in a web browser to view your generated documentation.</p>
+<div class="figure">
+<img src="generate-javadoc.gif" alt="How to generate Javadoc using Eclipse" />
+<p class="caption">How to generate Javadoc using Eclipse</p>
+</div>
+<h2 id="final-source-code">Final Source Code</h2>
+<p>You can view the final source code of the <code>BankAccount</code> class on <a href="https://github.com/ErasmusUniversityAutolab/FEB22012-StyleGuide/blob/master/BankAccount.java">GitHub</a>.</p>
+            </div>
+    </div>
+  </div>
+</body>
+</html>
