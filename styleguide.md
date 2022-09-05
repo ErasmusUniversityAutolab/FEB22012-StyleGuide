@@ -118,7 +118,7 @@ public class Foo{
 
 ### Override both hashCode and equals
 
-This rule becomes relevant when you are introduce to inheritance and the `Object` class;
+This rule becomes relevant when you are introduced to inheritance and the `Object` class;
 it is not likely you will violate it before you understand these concepts. It basically
 means that as soon as a class override either the `hashCode()` or `equals()` method,
 it should also override the other one. It is almost always incorrect to override only

@@ -1,60 +1,127 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html >
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="generator" content="pandoc" />
-  <title></title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--[if lt IE 9]>
+                <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="template.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/template.css" />
+
+    <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- <script type='text/javascript' src='menu/js/jquery.cookie.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.hoverIntent.minified.js'></script> -->
+    <!-- <script type='text/javascript' src='menu/js/jquery.dcjqaccordion.2.7.min.js'></script> -->
+
+    <!-- <link href="menu/css/skins/blue.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/graphite.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="menu/css/skins/grey.css" rel="stylesheet" type="text/css" /> -->
+  
+    <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+        
+  
+    <!-- <script src="script.js"></script> -->
+  
+    <!-- <script src="jquery.sticky-kit.js "></script> -->
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.cookie.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.hoverIntent.minified.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/js/jquery.dcjqaccordion.2.7.min.js'></script>
+
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/blue.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/graphite.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/menu/css/skins/grey.css" rel="stylesheet" type="text/css" />
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/script.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/diversen/pandoc-bootstrap-adaptive-template@959c3622/jquery.sticky-kit.js"></script>
+    <meta name="generator" content="pandoc" />
+  <title>styleguide</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="template-css.css" type="text/css" />
 </head>
 <body>
+
+    
     <div class="container">
     <div class="row">
             <div id="TOC" class="span3">
         <div class="well toc">
+
         <ul>
-          <li class="nav-header">Table of Contents</li>
-        </ul>
+        <li><a class="active" href="#feb22012-programming-code-quality-guide">FEB22012 Programming Code Quality Guide</a>
         <ul>
-        <li><a href="#feb22012-programming-code-quality-guide">FEB22012 Programming Code Quality Guide</a><ul>
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#mandatory-rules">Mandatory Rules</a></li>
         <li><a href="#high-priority-error-prone-coding">High Priority: Error Prone Coding</a></li>
@@ -62,10 +129,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         <li><a href="#coding-style">Coding style</a></li>
         </ul></li>
         </ul>
+
         </div>
       </div>
             <div class="span9">
-            <h1 id="feb22012-programming-code-quality-guide">FEB22012 Programming Code Quality Guide</h1>
+      <h1 id="feb22012-programming-code-quality-guide">FEB22012 Programming Code Quality Guide</h1>
 <h2 id="introduction">Introduction</h2>
 <p>This document contains the code quality guide that we use during the FEB22012(X) Programming course.</p>
 <h2 id="mandatory-rules">Mandatory Rules</h2>
@@ -87,45 +155,45 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#missingoverride">MissingOverride</a></li>
 </ul>
 <h3 id="proper-javadoc-comments">Proper Javadoc Comments</h3>
-<p>You should write Javadoc comments to document public <em>classes</em> and <em>methods</em>. We have a <a href="javadoc.html">separate document that explains how to write Javadoc within this course</a>. "It is not allowed to write Javadoc comments in other locations. Regular comments are allowed. The following code fragment contains some examples:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">  <span class="fu">@Override</span>
-  <span class="co">/**</span>
-<span class="co">   * This JavaDoc comment should be before the @Override annotation, not here.</span>
-<span class="co">   */</span>
-   <span class="kw">public</span> <span class="dt">int</span> <span class="fu">compare</span>(MyClass o1, MyClass o2) {
-      <span class="co">/**</span>
-<span class="co">       * Javadoc comments should never be written inside methods!</span>
-<span class="co">       */</span> 
-       <span class="co">// Regular single line comments are allowed anywhere</span>
-       <span class="co">/* Multi-line regular comments</span>
-<span class="co">        * are also allowed anywhere</span>
-<span class="co">        */</span>
-       <span class="kw">return</span> o1.<span class="fu">getValue</span>() - o2.<span class="fu">getValue</span>();
-   }
-}</code></pre></div>
+<p>You should write Javadoc comments to document public <em>classes</em> and <em>methods</em>. It is not allowed to write Javadoc comments in other locations. Regular comments are allowed. We have a <a href="javadoc.md">seperate document</a> that explains in detail how you should write Javadoc comments during this course. The following code fragment contains some examples:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>  <span class="at">@Override</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/**</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   <span class="co">*</span> This JavaDoc comment should be before the <span class="co">@</span>Override annotation<span class="co">,</span> not here<span class="co">.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   <span class="co">*/</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">int</span> <span class="fu">compare</span><span class="op">(</span>MyClass o1<span class="op">,</span> MyClass o2<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="co">/**</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>       <span class="co">*</span> Javadoc comments should never be written inside methods<span class="co">!</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>       <span class="co">*/</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>       <span class="co">// Regular single line comments are allowed anywhere</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>       <span class="co">/* Multi-line regular comments</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">        * are also allowed anywhere</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">        */</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>       <span class="cf">return</span> o1<span class="op">.</span><span class="fu">getValue</span><span class="op">()</span> <span class="op">-</span> o2<span class="op">.</span><span class="fu">getValue</span><span class="op">();</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Your classes should always contain Javadoc with a <code>@author</code> tag that starts with your ERNA-id. For example, a correct (but too short) class Javadoc could look as follows:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">/**</span>
-<span class="co"> * This class does some very interesting stuff.</span>
-<span class="co"> *</span>
-<span class="co"> * </span><span class="kw">@author </span><span class="co">123456ae Adrian Example</span>
-<span class="co"> */</span>
-<span class="kw">public</span> <span class="kw">class</span> MyClass {
-
-}</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> This class does some very interesting stuff<span class="co">.</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> <span class="co">@</span>author <span class="co">123456ae</span> Adrian Example</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a> <span class="co">*/</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MyClass <span class="op">{</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Finally, you should use tags such as <code>@param</code> and <code>@return</code> in your Javadoc comments to explain the meaning of parameters and returned values of your methods and constructors. If you define a tag in a Javadoc comment, you are not allowed to leave the explanation empty.</p>
 <h3 id="make-instance-variables-private">Make instance variables private</h3>
-<p>A well designed class should not burden its users with details of its implementation. You have probably worked with objects of the String class, but you do not necessarily know all the details of how it is implemented by the programmers of the Java language. A common way to do this, it to make sure all interactions with objects of a class are performed using methods of that class, while the internal data model (i.e. the instance variables) of the objects are hidden from the users. This referred to as <a href="https://en.wikipedia.org/wiki/Information_hiding">information hiding</a> or <a href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)">encapsulation</a>.</p>
+<p>A well designed class should not burden its users with details of its implementation. You have probably worked with objects of the String class, but you do not necessarily know all the details of how it is implemented by the programmers of the Java language. A common way to do this, it to make sure all interactions with objects of a class are performed using methods of that class, while the internal data model (i.e. the instance variables) of the objects are hidden from the users. This referred to as <a href="https://en.wikipedia.org/wiki/Information_hiding">information hiding</a> or <a href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)">encapsulation</a>.</p>
 <p>As a consequence, you should define all instance variables or class members as <code>private</code>.</p>
 <p><strong>Note :</strong> in certain exercises, this requirement may be relaxed to some extent. If so, this is mentioned in the text of the exercise.</p>
 <h3 id="single-top-level-class">Single Top Level class</h3>
 <p>You are only allowed to have a single top-level class in a <code>.java</code> file. The following code fragment gives an example of a file with two top-level classes.</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Foo{
-  <span class="co">//methods</span>
-}
-
-<span class="kw">class</span> Foo2{
-  <span class="co">//methods</span>
-}</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Foo<span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">//methods</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Foo2<span class="op">{</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">//methods</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>If you want to have more than a single class in a file, you can consider to create <em>static inner classes</em>. This can be done as follows:</p>
 <pre><code>public class Foo{
   //methods
@@ -136,18 +204,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 }</code></pre>
 <h3 id="override-both-hashcode-and-equals">Override both hashCode and equals</h3>
-<p>This rule becomes relevant when you are introduce to inheritance and the <code>Object</code> class; it is not likely you will violate it before you understand these concepts. It basically means that as soon as a class override either the <code>hashCode()</code> or <code>equals()</code> method, it should also override the other one. It is almost always incorrect to override only one of them according to the contracts of these methods.</p>
-<h3 id="use-the-override-annotation-when-overriding-methods.">Use the <span class="citation">@Override</span> annotation when overriding methods.</h3>
+<p>This rule becomes relevant when you are introduced to inheritance and the <code>Object</code> class; it is not likely you will violate it before you understand these concepts. It basically means that as soon as a class override either the <code>hashCode()</code> or <code>equals()</code> method, it should also override the other one. It is almost always incorrect to override only one of them according to the contracts of these methods.</p>
+<h3 id="use-the-override-annotation-when-overriding-methods.">Use the <span class="citation" data-cites="Override">@Override</span> annotation when overriding methods.</h3>
 <p>When you implement and interface or create a subclass, you should always indicate which methods override other methods. Note that if you use Eclipse to generate overriden methods for you, the annotation is always added. Adding the notation is considered good practice, because it avoids that you introduce new methods rather than overriding old ones (e.g. you create a new method <code>hashcode()</code> while you intend to override <code>hashCode()</code>).</p>
-<p>Annotating overridden methods with <span class="citation">@Override</span> ensures at compile time that the method really overrides one, which helps refactoring and clarifies intent.</p>
+<p>Annotating overridden methods with <span class="citation" data-cites="Override">@Override</span> ensures at compile time that the method really overrides one, which helps refactoring and clarifies intent.</p>
 <p><strong>Examples:</strong></p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Foo <span class="kw">implements</span> Runnable {
-
-   <span class="co">// This method is overridden, and should have an @Override annotation</span>
-   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span>() {
-
-   }
-}</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Foo <span class="kw">implements</span> <span class="bu">Runnable</span> <span class="op">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>   <span class="co">// This method is overridden, and should have an @Override annotation</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">run</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h2 id="high-priority-error-prone-coding">High Priority: Error Prone Coding</h2>
 <p>The second set of rules are <em>error prone</em> coding rules. If these issues are detected in your code, it will have a strong impact on your score for code quality. While it is technically possible to use violate these rules in correct code, in almost all cases these things are mistakes, or can quickly lead to mistakes if you need to change your code at a later moment. Therefore, you should avoid doing these things.</p>
 <p>External links to relevant rules:</p>
@@ -181,72 +249,72 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <h3 id="avoid-nested-blocks">Avoid Nested Blocks</h3>
 <p>In Java, you are allowed to define loose blocks, that have their own scope. The following code fragment contains a loose block:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">printSomething</span>() {
-   <span class="dt">int</span> x = <span class="dv">3</span>;
-   {
-      <span class="co">// This is a loose block, which you should avoid.</span>
-      <span class="dt">int</span> x = <span class="dv">5</span>;
-   }
-   System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The number is &quot;</span>+x);
-   
-   <span class="co">// This block belong to an-if statement, and is allowed.</span>
-   <span class="kw">if</span> (x &lt; <span class="dv">5</span>) {
-      System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Smaller than 3&quot;</span>);
-   }
-   
-   <span class="co">// The accidental semi-colon seperates the if statement</span>
-   <span class="co">// from the block. This is the type of mistake we like</span>
-   <span class="co">// to avoid.</span>
-   <span class="kw">if</span> (x==<span class="dv">5</span>); <span class="co">// notice the semi-colon!!</span>
-   {
-      <span class="co">// Oops! This part is always executed, not matter</span>
-      <span class="co">// what the value of x is.</span>
-      System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;x seems to be five&quot;</span>);
-   }
-}</code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">printSomething</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>   <span class="dt">int</span> x <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>   <span class="op">{</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>      <span class="co">// This is a loose block, which you should avoid.</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">int</span> x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>   <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;The number is &quot;</span><span class="op">+</span>x<span class="op">);</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>   <span class="co">// This block belong to an-if statement, and is allowed.</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> <span class="op">(</span>x <span class="op">&lt;</span> <span class="dv">5</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;Smaller than 3&quot;</span><span class="op">);</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>   <span class="co">// The accidental semi-colon seperates the if statement</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>   <span class="co">// from the block. This is the type of mistake we like</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>   <span class="co">// to avoid.</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> <span class="op">(</span>x<span class="op">==</span><span class="dv">5</span><span class="op">);</span> <span class="co">// notice the semi-colon!!</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>   <span class="op">{</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Oops! This part is always executed, not matter</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>      <span class="co">// what the value of x is.</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;x seems to be five&quot;</span><span class="op">);</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="avoid-empty-catch-blocks">Avoid Empty Catch Blocks</h3>
 <p>In Java, empty <code>catch</code> blocks are considered bad practice since they suppress mistakes, while the user of your program may want to know that something went wrong. You should never catch an Exception if you have no good way to deal with. At the very least, you should print a stacktracte using the <code>e.printStackTrace()</code> on the <code>Exception</code> object <code>e</code>. Alternatively, you can throw the exception to a caller. Consider the following code fragments:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">readFileInBadWay</span>(File input) {
-   <span class="kw">try</span> {
-      List&lt;String&gt; allLines = Files.<span class="fu">readAllLines</span>(input.<span class="fu">toPath</span>());
-   }
-   <span class="co">// The following catch-block is empty; you should avoid this.</span>
-   <span class="kw">catch</span> (IOException ex) {
-     
-   }
-}
-
-<span class="kw">public</span> <span class="dt">void</span> <span class="fu">readFileInBetterWay</span>(File input) {
-   <span class="kw">try</span> {
-      List&lt;String&gt; allLines = Files.<span class="fu">readAllLines</span>(input.<span class="fu">toPath</span>());
-   }
-   <span class="co">// The following catch-block at least gives a message to the user.</span>
-   <span class="co">// This is allowed</span>
-   <span class="kw">catch</span> (IOException ex) {
-     System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Error reading file &quot;</span>+input);
-     ex.<span class="fu">printStackTrace</span>();
-   }
-}
-
-<span class="co">// Since our caller should provide an input file that we can read properly,</span>
-<span class="co">// in this case the best design is to let the caller of this method deal</span>
-<span class="co">// with the IOException if the file can not be read.</span>
-<span class="kw">public</span> <span class="dt">void</span> <span class="fu">readFileInBestWay</span>(File input) <span class="kw">throws</span> IOException {
-   List&lt;String&gt; allLines = Files.<span class="fu">readAllLines</span>(input.<span class="fu">toPath</span>());
-}</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">readFileInBadWay</span><span class="op">(</span><span class="bu">File</span> input<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>   <span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>      <span class="bu">List</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> allLines <span class="op">=</span> Files<span class="op">.</span><span class="fu">readAllLines</span><span class="op">(</span>input<span class="op">.</span><span class="fu">toPath</span><span class="op">());</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>   <span class="co">// The following catch-block is empty; you should avoid this.</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>   <span class="cf">catch</span> <span class="op">(</span><span class="bu">IOException</span> ex<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">readFileInBetterWay</span><span class="op">(</span><span class="bu">File</span> input<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>   <span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      <span class="bu">List</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> allLines <span class="op">=</span> Files<span class="op">.</span><span class="fu">readAllLines</span><span class="op">(</span>input<span class="op">.</span><span class="fu">toPath</span><span class="op">());</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>   <span class="co">// The following catch-block at least gives a message to the user.</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>   <span class="co">// This is allowed</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>   <span class="cf">catch</span> <span class="op">(</span><span class="bu">IOException</span> ex<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>     <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;Error reading file &quot;</span><span class="op">+</span>input<span class="op">);</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>     ex<span class="op">.</span><span class="fu">printStackTrace</span><span class="op">();</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co">// Since our caller should provide an input file that we can read properly,</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co">// in this case the best design is to let the caller of this method deal</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co">// with the IOException if the file can not be read.</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">readFileInBestWay</span><span class="op">(</span><span class="bu">File</span> input<span class="op">)</span> <span class="kw">throws</span> <span class="bu">IOException</span> <span class="op">{</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>   <span class="bu">List</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> allLines <span class="op">=</span> Files<span class="op">.</span><span class="fu">readAllLines</span><span class="op">(</span>input<span class="op">.</span><span class="fu">toPath</span><span class="op">());</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="control-structures-need-braces.">Control-structures need braces.</h3>
 <p>The Java language allows you to write a single statement after control structures such as <code>if</code>, <code>for</code> and <code>while</code>. That means no block is defined using <code>{</code> and <code>}</code>, and only a single statement is affected by the control structure. Since this is often error prone, this should be avoided. The following code fragments contains some examples:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">for</span> (<span class="dt">int</span> x=<span class="dv">0</span>; x &lt; <span class="dv">10</span>; x++)
-   System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The number is &quot;</span>+x);
-
-<span class="kw">if</span> (x&gt;<span class="dv">3</span>)
-   System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Greater than three&quot;</span>);
-   
-<span class="kw">while</span> (x&lt;<span class="dv">10</span>)
-   System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;The number is &quot;</span>+x);
-   <span class="co">// The following line of code is executed only after the loop finishes!</span>
-   <span class="co">// This is a type of mistake we prefer to avoid!</span>
-   x++;</code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> x<span class="op">=</span><span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> x<span class="op">++)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;The number is &quot;</span><span class="op">+</span>x<span class="op">);</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>x<span class="op">&gt;</span><span class="dv">3</span><span class="op">)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>   <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;Greater than three&quot;</span><span class="op">);</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="op">(</span>x<span class="op">&lt;</span><span class="dv">10</span><span class="op">)</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>   <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;The number is &quot;</span><span class="op">+</span>x<span class="op">);</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>   <span class="co">// The following line of code is executed only after the loop finishes!</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>   <span class="co">// This is a type of mistake we prefer to avoid!</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>   x<span class="op">++;</span></span></code></pre></div>
 <p>The correct version of the above code fragment looks as follows:</p>
 <pre><code>for (int x=0; x &lt; 10; x++)
 {
@@ -266,320 +334,320 @@ while (x&lt;10)
 }</code></pre>
 <h3 id="avoid-hiding-fields">Avoid hiding fields</h3>
 <p>A variable can have a different scope, depending on the location is where it is defined. Variables defined within the class are instance variables and are part of objects, while variables defined as parameters of method or constructors only live while that method or constructor is executed. We should avoid using the same name at different levels within the same class if this causes potential confusing, as the class level variable is hidden/shadowed. The following fragment contains an example of instance variable shadowing:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> MyClass {
-
-   <span class="kw">private</span> <span class="dt">int</span> someNumber;
-   <span class="kw">private</span> <span class="dt">int</span> anotherNumber;
-   
-   <span class="kw">public</span> <span class="fu">MyClass</span>(<span class="dt">int</span> someNumber, <span class="dt">int</span> anotherNumber) {
-      <span class="co">// This assigns a new value to the parameter, but not to the instance variable!!</span>
-      <span class="co">// This is likely a mistake</span>
-      someNumber = anotherNumber + <span class="dv">5</span>;
-      anotherNumber = someNumber + <span class="dv">3</span>;
-   }
-}</code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MyClass <span class="op">{</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="dt">int</span> someNumber<span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="dt">int</span> anotherNumber<span class="op">;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="fu">MyClass</span><span class="op">(</span><span class="dt">int</span> someNumber<span class="op">,</span> <span class="dt">int</span> anotherNumber<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>      <span class="co">// This assigns a new value to the parameter, but not to the instance variable!!</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>      <span class="co">// This is likely a mistake</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>      someNumber <span class="op">=</span> anotherNumber <span class="op">+</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>      anotherNumber <span class="op">=</span> someNumber <span class="op">+</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>The constructor mentioned can be written as follows:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">   <span class="kw">public</span> <span class="fu">MyClass</span>(<span class="dt">int</span> firstNumber, <span class="dt">int</span> secondNumber) {
-      someNumber = secondNumber + <span class="dv">5</span>;
-      anotherNumber = firstNumber + <span class="dv">3</span>;
-   }</code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="fu">MyClass</span><span class="op">(</span><span class="dt">int</span> firstNumber<span class="op">,</span> <span class="dt">int</span> secondNumber<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>      someNumber <span class="op">=</span> secondNumber <span class="op">+</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>      anotherNumber <span class="op">=</span> firstNumber <span class="op">+</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span></code></pre></div>
 <p>Alternatively, the following is allowed as well:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">   <span class="kw">public</span> <span class="fu">MyClass</span>(<span class="dt">int</span> someNumber, <span class="dt">int</span> anotherNumber) {
-      <span class="co">// With the explicit this reference, the can be no confusion!</span>
-      <span class="kw">this</span>.<span class="fu">someNumber</span> = anotherNumber + <span class="dv">5</span>;
-      <span class="kw">this</span>.<span class="fu">anotherNumber</span> = someNumber + <span class="dv">3</span>;
-   }</code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="fu">MyClass</span><span class="op">(</span><span class="dt">int</span> someNumber<span class="op">,</span> <span class="dt">int</span> anotherNumber<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>      <span class="co">// With the explicit this reference, the can be no confusion!</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="fu">someNumber</span> <span class="op">=</span> anotherNumber <span class="op">+</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="fu">anotherNumber</span> <span class="op">=</span> someNumber <span class="op">+</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span></code></pre></div>
 <h3 id="refrain-from-using-inner-assignments">Refrain from using inner assignments</h3>
 <p>In programs we often want to update the value of variable. We should always do this using an assignment statement, for example <code>x = 5;</code>, <code>x++;</code> or <code>x -= 2;</code>. However, in the syntax of Java assignments are also considered expressions. Thus something like <code>x = (y = 5) + 3;</code> is also valid, and assigns the value <code>5</code> to variable <code>y</code> and the value <code>8</code> to variable <code>x</code>. These constructs are error-prone, and often lead to mistakes, in particular when accidentally used in an <code>if</code> or <code>while</code> construction. For example, the following code fragment never terminates:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">boolean</span> doSomeMore = <span class="kw">true</span>;
-<span class="co">// The assignment in the condition always sets doSomeMore to true, and thus the condition</span>
-<span class="co">// is always true and the loop never terminates!</span>
-<span class="kw">while</span> (doSomeMore = <span class="kw">true</span>) {
-   <span class="fu">doSomething</span>();
-   <span class="fu">checkSomething</span>();
-}</code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">boolean</span> doSomeMore <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">// The assignment in the condition always sets doSomeMore to true, and thus the condition</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">// is always true and the loop never terminates!</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="op">(</span>doSomeMore <span class="op">=</span> <span class="kw">true</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">doSomething</span><span class="op">();</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">checkSomething</span><span class="op">();</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="simplify-boolean-expressions">Simplify Boolean Expressions</h3>
 <p>It is helpful to keep the condition <code>if</code> statement, or a method with a <code>boolean</code> return value simple. This means that if use a <code>boolean</code> expression in those contexts, we should avoid comparing this expression against <code>true</code> or <code>false</code>.</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">boolean</span> checkValue = <span class="fu">checkSomething</span>();
-<span class="co">// The comparison is not necessary!</span>
-<span class="kw">if</span> (checkValue == <span class="kw">true</span>) {
-   <span class="co">// do something</span>
-}
-
-<span class="co">// This can be simplified to</span>
-<span class="kw">if</span> (checkValue) {
-   <span class="co">// do something</span>
-}</code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dt">boolean</span> checkValue <span class="op">=</span> <span class="fu">checkSomething</span><span class="op">();</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">// The comparison is not necessary!</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>checkValue <span class="op">==</span> <span class="kw">true</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>   <span class="co">// do something</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">// This can be simplified to</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>checkValue<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>   <span class="co">// do something</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Something similar holds for methods that return a boolean value. Since we can return arbitrary restrictions, we can return boolean expressions rather than unnecessary <code>if</code> and <code>else</code> constructs, as the following code fragment illlustrates.</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">boolean</span> checkValue = <span class="fu">checkSomething</span>();
-<span class="kw">if</span> (checkValue == <span class="kw">false</span>) {
-   <span class="kw">return</span> <span class="kw">true</span>;
-}
-<span class="kw">else</span> {
-   <span class="kw">return</span> <span class="kw">false</span>;
-}
-
-<span class="co">// The above fragment can be simplified to a single line:</span>
-<span class="kw">return</span> !<span class="fu">checkSomething</span>();</code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dt">boolean</span> checkValue <span class="op">=</span> <span class="fu">checkSomething</span><span class="op">();</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>checkValue <span class="op">==</span> <span class="kw">false</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>   <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>   <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">// The above fragment can be simplified to a single line:</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="op">!</span><span class="fu">checkSomething</span><span class="op">();</span></span></code></pre></div>
 <h3 id="usetrywithresources">UseTryWithResources</h3>
 <p>Java 7 introduced the try-with-resources statement. This statement ensures that each resource is closed at the end of the statement, which is important to avoid bugs around resources that are not properly closed. It avoids the need of explicitly closing the resources in a finally block. Additionally exceptions are better handled: If an exception occurred both in the <code>try</code> block and <code>finally</code> block, then the exception from the try block was suppressed. With the <code>try</code>-with-resources statement, the exception thrown from the try-block is preserved.</p>
 <p>For example, the code</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">InputStream in = <span class="kw">null</span>;
-<span class="kw">try</span> {
-    in = <span class="fu">openInputStream</span>();
-    <span class="dt">int</span> i = in.<span class="fu">read</span>();
-} <span class="kw">catch</span> (IOException e) {
-    e.<span class="fu">printStackTrace</span>();
-} <span class="kw">finally</span> {
-    <span class="kw">try</span> {
-        <span class="kw">if</span> (in != <span class="kw">null</span>) in.<span class="fu">close</span>();
-    } <span class="kw">catch</span> (IOException ignored) {
-        <span class="co">// ignored</span>
-    }
-}</code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">InputStream</span> in <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    in <span class="op">=</span> <span class="fu">openInputStream</span><span class="op">();</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i <span class="op">=</span> in<span class="op">.</span><span class="fu">read</span><span class="op">();</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span><span class="bu">IOException</span> e<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    e<span class="op">.</span><span class="fu">printStackTrace</span><span class="op">();</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">finally</span> <span class="op">{</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>in <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> in<span class="op">.</span><span class="fu">close</span><span class="op">();</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span><span class="bu">IOException</span> ignored<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">// ignored</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>is better written as:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// better use try-with-resources</span>
-<span class="kw">try</span> (InputStream in2 = <span class="fu">openInputStream</span>()) {
-    <span class="dt">int</span> i = in2.<span class="fu">read</span>();
-}</code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">// better use try-with-resources</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">(</span><span class="bu">InputStream</span> in2 <span class="op">=</span> <span class="fu">openInputStream</span><span class="op">())</span> <span class="op">{</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i <span class="op">=</span> in2<span class="op">.</span><span class="fu">read</span><span class="op">();</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="equalsnull">EqualsNull</h3>
 <p>Tests for null should not use the equals() method, as it could result in an <code>NullPointerException</code>. The <code>==</code> operator should be used instead.</p>
 <p>Rather than writing</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">String x = <span class="st">&quot;foo&quot;</span>;
-
-<span class="kw">if</span> (x.<span class="fu">equals</span>(<span class="kw">null</span>)) {
-    <span class="fu">doSomething</span>();
-}</code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> x <span class="op">=</span> <span class="st">&quot;foo&quot;</span><span class="op">;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>x<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="kw">null</span><span class="op">))</span> <span class="op">{</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">doSomething</span><span class="op">();</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>it is better to write</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">if</span> (x == <span class="kw">null</span>) {
-    <span class="fu">doSomething</span>();
-}</code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>x <span class="op">==</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">doSomething</span><span class="op">();</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="unusedprivatemethod">UnusedPrivateMethod</h3>
 <p>If a private method is declared but never used within the same class, there is no way that code can ever be executed. It can be deleted from the program safely, and it is cleaner to do so.</p>
 <h3 id="unconditionalifstatement">UnconditionalIfStatement</h3>
-<p>Do not use &quot;if&quot; statements whose conditionals are always true or always false. Such statements can be removed to produce cleaner and shorter code.</p>
+<p>Do not use “if” statements whose conditionals are always true or always false. Such statements can be removed to produce cleaner and shorter code.</p>
 <p>For example, if statement such as the following ones should be avoided:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">if</span> (<span class="kw">true</span>) {
-    <span class="co">// This part is always executed</span>
-}
-
-<span class="kw">if</span> (<span class="dv">2</span>&lt;<span class="dv">1</span>) {
-    <span class="co">// This part is never executed</span>
-}</code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span><span class="kw">true</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// This part is always executed</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span><span class="dv">2</span><span class="op">&lt;</span><span class="dv">1</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// This part is never executed</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="nonstaticinitializer">NonStaticInitializer</h3>
 <p>A non-static initializer block will be called any time a constructor is invoked (just prior to invoking the constructor). As this is an obscure and confusing language construct, it should be avoided.</p>
 <p>An example:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> MyClass {
-  <span class="co">// this block gets run before any call to a constructor</span>
-  {
-    System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;I am about to construct myself&quot;</span>);
-  }
-}</code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MyClass <span class="op">{</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// this block gets run before any call to a constructor</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;I am about to construct myself&quot;</span><span class="op">);</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="uselessoperationonimmutable">UselessOperationOnImmutable</h3>
-<p>An operation on an Immutable object (String, BigDecimal or BigInteger) won't change the object itself since the result of the operation is a new object. Therefore, ignoring the operation result is an error.</p>
+<p>An operation on an Immutable object (String, BigDecimal or BigInteger) won’t change the object itself since the result of the operation is a new object. Therefore, ignoring the operation result is an error.</p>
 <p>For example, the following code</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">BigInteger bi = BigInteger.<span class="fu">valueOf</span>(<span class="dv">10</span>);
-<span class="co">// the new object created in the next line is immediately forgotten</span>
-bi.<span class="fu">add</span>(BigInteger.<span class="fu">valueOf</span>(<span class="dv">5</span>));</code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">BigInteger</span> bi <span class="op">=</span> <span class="bu">BigInteger</span><span class="op">.</span><span class="fu">valueOf</span><span class="op">(</span><span class="dv">10</span><span class="op">);</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">// the new object created in the next line is immediately forgotten</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>bi<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="bu">BigInteger</span><span class="op">.</span><span class="fu">valueOf</span><span class="op">(</span><span class="dv">5</span><span class="op">));</span></span></code></pre></div>
 <p>is probably an incorrect version of the following code:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java">BigInteger bi = <span class="kw">new</span> BigInteger.<span class="fu">valueOf</span>(<span class="dv">10</span>);
-<span class="co">// the next object created in now store in the variable</span>
-bi = bi.<span class="fu">add</span>(BigInteger.<span class="fu">valueOf</span>(<span class="dv">5</span>));</code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">BigInteger</span> bi <span class="op">=</span> <span class="kw">new</span> <span class="bu">BigInteger</span><span class="op">.</span><span class="fu">valueOf</span><span class="op">(</span><span class="dv">10</span><span class="op">);</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">// the next object created in now store in the variable</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>bi <span class="op">=</span> bi<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="bu">BigInteger</span><span class="op">.</span><span class="fu">valueOf</span><span class="op">(</span><span class="dv">5</span><span class="op">));</span></span></code></pre></div>
 <h3 id="jumbledincrementer">JumbledIncrementer</h3>
 <p>Avoid jumbled loop incrementers in for-loops. This is usually a mistake, and is confusing even if intentional.</p>
 <p>For example, the inner loop in the following example is not allowed</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// Th outer loop only references &#39;i&#39; and is okay</span>
-<span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">10</span>; i++) {
-    <span class="co">// The inner loop references both &#39;i&#39; and &#39;k&#39; and is not allowed</span>
-    <span class="kw">for</span> (<span class="dt">int</span> k = <span class="dv">0</span>; k &lt; <span class="dv">20</span>; i++) {
-        System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;Hello&quot;</span>);
-    }
-}</code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Th outer loop only references &#39;i&#39; and is okay</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// The inner loop references both &#39;i&#39; and &#39;k&#39; and is not allowed</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> k <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> k <span class="op">&lt;</span> <span class="dv">20</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;Hello&quot;</span><span class="op">);</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="unusedprivatefield">UnusedPrivateField</h3>
 <p>Detects when a private field is declared and/or assigned a value, but not used. If such a field is never used, this usually means it can be removed without any problems.</p>
 <p><strong>Examples:</strong></p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Something {
-    <span class="co">// The next two fields are never used</span>
-    <span class="kw">private</span> <span class="dt">static</span> <span class="dt">int</span> FOO = <span class="dv">2</span>;
-    <span class="kw">private</span> <span class="dt">int</span> i = <span class="dv">5</span>;
-    <span class="co">// The next field is used (in the addOne() method)</span>
-    <span class="kw">private</span> <span class="dt">int</span> j = <span class="dv">6</span>;
-    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">addOne</span>() {
-        <span class="kw">return</span> j++;
-    }
-}</code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Something <span class="op">{</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// The next two fields are never used</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">static</span> <span class="dt">int</span> FOO <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> i <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// The next field is used (in the addOne() method)</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> j <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">addOne</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> j<span class="op">++;</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="forloopshouldbewhileloop">ForLoopShouldBeWhileLoop</h3>
 <p>Some for loops can be simplified to while loops, this makes them more concise.</p>
 <p>For example:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">for</span> (;<span class="kw">true</span>;) {
-    <span class="co">// Do something</span>
-}</code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(;</span><span class="kw">true</span><span class="op">;)</span> <span class="op">{</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Do something</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>can be replaced by the simpler</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">while</span> (<span class="kw">true</span>) {
-    <span class="co">// Do something</span>
-}</code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="op">(</span><span class="kw">true</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Do something</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="useequalstocomparestrings">UseEqualsToCompareStrings</h3>
-<p>Using '==' or '!=' to compare strings only works if intern versions are used on both sides, a topic that is not covered in this course. Therefore, you should always use the equals() method instead.</p>
+<p>Using ‘==’ or ‘!=’ to compare strings only works if intern versions are used on both sides, a topic that is not covered in this course. Therefore, you should always use the equals() method instead.</p>
 <p>The following code is usually unreliable</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">if</span> (s == <span class="st">&quot;one&quot;</span>) {
-    <span class="co">// Do something</span>
-}</code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>s <span class="op">==</span> <span class="st">&quot;one&quot;</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Do something</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>and should be replaced by</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">if</span> (<span class="st">&quot;one&quot;</span>.<span class="fu">equals</span>(s)) {
-    <span class="co">// Do something</span>
-}</code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span><span class="st">&quot;one&quot;</span><span class="op">.</span><span class="fu">equals</span><span class="op">(</span>s<span class="op">))</span> <span class="op">{</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Do something</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="returnfromfinallyblock">ReturnFromFinallyBlock</h3>
 <p>In this course, there is no real need to use <code>finally</code> blocks (since you can use the <em>try-with-resources</em>). If you still decide to use <code>finally</code> block, you should avoid returning from it as this can discard exceptions.</p>
 <p>Thus, the following should be avoided:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> String <span class="fu">foo</span>() {
-    <span class="kw">try</span> {
-        <span class="kw">throw</span> <span class="kw">new</span> Exception( <span class="st">&quot;My Exception&quot;</span> );
-    } <span class="kw">catch</span> (Exception e) {
-        <span class="kw">throw</span> e;
-    } <span class="kw">finally</span> {
-        <span class="co">// return not recommended here</span>
-        <span class="kw">return</span> <span class="st">&quot;A. O. K.&quot;</span>; 
-    }
-}</code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">String</span> <span class="fu">foo</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">throw</span> <span class="kw">new</span> <span class="bu">Exception</span><span class="op">(</span> <span class="st">&quot;My Exception&quot;</span> <span class="op">);</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span><span class="bu">Exception</span> e<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">throw</span> e<span class="op">;</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">finally</span> <span class="op">{</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">// return not recommended here</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;A. O. K.&quot;</span><span class="op">;</span> </span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="forloopcanbeforeach">ForLoopCanBeForeach</h3>
-<p>Reports loops that can be safely replaced with the enhanced for loop, (i.e. the for-each loop) syntax. The rule considers loops over lists, arrays and iterators. A loop is safe to replace if it only uses the index variable to access an element of the list or array, only has one update statement, and loops through <em>every</em> element of the list or array left to right. In those cases, we prefer to use the enhanced for-loop as it is more concise and less error-prone.</p>
+<p>Reports loops that can be safely replaced with the enhanced for loop, (i.e. the for-each loop) syntax. The rule considers loops over lists, arrays and iterators. A loop is safe to replace if it only uses the index variable to access an element of the list or array, only has one update statement, and loops through <em>every</em> element of the list or array left to right. In those cases, we prefer to use the enhanced for-loop as it is more concise and less error-prone.</p>
 <p>Thus the following regular for-loop will trigger this rule</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">loop</span>(List&lt;String&gt; lst) {
-    <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; lst.<span class="fu">size</span>(); i++) {
-      System.<span class="fu">out</span>.<span class="fu">println</span>(lst.<span class="fu">get</span>(i));
-    }
-}</code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">loop</span><span class="op">(</span><span class="bu">List</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> lst<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> lst<span class="op">.</span><span class="fu">size</span><span class="op">();</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>lst<span class="op">.</span><span class="fu">get</span><span class="op">(</span>i<span class="op">));</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>and can be safely replaced by</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">loop</span>(List&lt;String&gt; lst) {
-    <span class="kw">for</span> (String s : lst) {
-      System.<span class="fu">out</span>.<span class="fu">println</span>(s);
-    }
-}</code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">loop</span><span class="op">(</span><span class="bu">List</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> lst<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="bu">String</span> s <span class="op">:</span> lst<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>      <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>s<span class="op">);</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="unusedlocalvariable">UnusedLocalVariable</h3>
 <p>Detects when a local variable is declared and/or assigned, but not used. In such cases, the variable assignment can usually be removed.</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">printSomething</span>() {
-    <span class="co">// The local variable i is unused</span>
-    <span class="dt">int</span> i = <span class="dv">5</span>;
-    System.<span class="fu">out</span>.<span class="fu">println</span>(<span class="st">&quot;something&quot;</span>);
-}</code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">printSomething</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// The local variable i is unused</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;something&quot;</span><span class="op">);</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="singularfield">SingularField</h3>
 <p>Fields whose scopes are limited to just single methods do not rely on the containing object to provide them to other methods. They may be better implemented as local variables within those methods.</p>
 <p>The following example</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Foo {
-    <span class="co">// no reason to exist at the Foo instance level</span>
-    <span class="kw">private</span> <span class="dt">int</span> x;
-    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">add</span>(<span class="dt">int</span> y) {
-     x = y + <span class="dv">5</span>;
-     <span class="kw">return</span> x;
-    }
-}</code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Foo <span class="op">{</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// no reason to exist at the Foo instance level</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> x<span class="op">;</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">add</span><span class="op">(</span><span class="dt">int</span> y<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>     x <span class="op">=</span> y <span class="op">+</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>     <span class="cf">return</span> x<span class="op">;</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>should be implemented as follows, since <code>x</code> is only used in the method <code>add</code></p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Foo {
-     <span class="kw">public</span> <span class="dt">void</span> <span class="fu">add</span>(<span class="dt">int</span> y) {
-     <span class="dt">int</span> x = y + <span class="dv">5</span>;
-     <span class="kw">return</span> x;
-    }
-}</code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Foo <span class="op">{</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>     <span class="kw">public</span> <span class="dt">void</span> <span class="fu">add</span><span class="op">(</span><span class="dt">int</span> y<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>     <span class="dt">int</span> x <span class="op">=</span> y <span class="op">+</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>     <span class="cf">return</span> x<span class="op">;</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="closeresource">CloseResource</h3>
-<p>Ensure that resources (like <code>java.io.FileInputStream</code>, i.e. objects and any subtype of <code>java.lang.AutoCloseable</code>) are always closed after use. Failing to do so might result in resource leaks, that may result in strange bugs and errors in more serious programs.</p>
+<p>Ensure that resources (like <code>java.io.FileInputStream</code>, i.e. objects and any subtype of <code>java.lang.AutoCloseable</code>) are always closed after use. Failing to do so might result in resource leaks, that may result in strange bugs and errors in more serious programs.</p>
 <p>Avoid the following:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">withFile</span>() {
-    InputStream file = <span class="kw">new</span> FileInputStream(<span class="kw">new</span> File(<span class="st">&quot;myfile.txt&quot;</span>));
-    <span class="kw">try</span> {
-        <span class="dt">int</span> c = file.<span class="fu">in</span>();
-    } <span class="kw">catch</span> (IOException e) {
-        <span class="co">// handle exception</span>
-    }
-}</code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">withFile</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">InputStream</span> file <span class="op">=</span> <span class="kw">new</span> <span class="bu">FileInputStream</span><span class="op">(</span><span class="kw">new</span> <span class="bu">File</span><span class="op">(</span><span class="st">&quot;myfile.txt&quot;</span><span class="op">));</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> c <span class="op">=</span> file<span class="op">.</span><span class="fu">in</span><span class="op">();</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span><span class="bu">IOException</span> e<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>        <span class="co">// handle exception</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>but us a <em>try-with-resources</em> block instead.</p>
 <h3 id="extendsobject">ExtendsObject</h3>
 <p>There is no need to explicitly extend Object, as any class that does not explicitly extend another class extends <code>Object</code> implicitly.</p>
 <h3 id="misplacednullcheck">MisplacedNullCheck</h3>
-<p>Checks if a null check is misplaced. If the variable is <code>null</code> a <code>NullPointerException</code> will be thrown. Either the check is useless (the variable will never be &quot;null&quot;) or it is incorrect.</p>
+<p>Checks if a null check is misplaced. If the variable is <code>null</code> a <code>NullPointerException</code> will be thrown. Either the check is useless (the variable will never be “null”) or it is incorrect.</p>
 <p>The following are examples of <code>null</code> checks that are incorrect:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">wrong1</span>(String a, String baz) {
-    <span class="kw">if</span> (a.<span class="fu">equals</span>(baz) &amp;&amp; a != <span class="kw">null</span>) {}
-}
-
-<span class="kw">public</span> <span class="dt">void</span> <span class="fu">wrong2</span>(String a, String baz) {
-        <span class="kw">if</span> (a.<span class="fu">equals</span>(baz) || a == <span class="kw">null</span>) {}
-    }</code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">wrong1</span><span class="op">(</span><span class="bu">String</span> a<span class="op">,</span> <span class="bu">String</span> baz<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>a<span class="op">.</span><span class="fu">equals</span><span class="op">(</span>baz<span class="op">)</span> <span class="op">&amp;&amp;</span> a <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{}</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">wrong2</span><span class="op">(</span><span class="bu">String</span> a<span class="op">,</span> <span class="bu">String</span> baz<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>a<span class="op">.</span><span class="fu">equals</span><span class="op">(</span>baz<span class="op">)</span> <span class="op">||</span> a <span class="op">==</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{}</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
 <h3 id="brokennullcheck">BrokenNullCheck</h3>
 <p>Looks for null checks that are broken since they will throw a <code>NullPointerException</code> themselves. It is likely that you used <code>||</code> instead of <code>&amp;&amp;</code> or vice versa.</p>
 <p>Examples:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> String <span class="fu">bar</span>(String text) {
-    <span class="co">// should be &amp;&amp;</span>
-    <span class="kw">if</span> (text!=<span class="kw">null</span> || !text.<span class="fu">equals</span>(<span class="st">&quot;&quot;</span>)) {
-        <span class="kw">return</span> text;
-    }
-    <span class="co">// should be ||</span>
-    <span class="kw">if</span> (text==<span class="kw">null</span> &amp;&amp; text.<span class="fu">equals</span>(<span class="st">&quot;&quot;</span>)) {
-        <span class="kw">return</span> text;
-    }
-    <span class="kw">return</span> <span class="st">&quot;&quot;</span>;
-}</code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">String</span> <span class="fu">bar</span><span class="op">(</span><span class="bu">String</span> text<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// should be &amp;&amp;</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>text<span class="op">!=</span><span class="kw">null</span> <span class="op">||</span> <span class="op">!</span>text<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">&quot;&quot;</span><span class="op">))</span> <span class="op">{</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> text<span class="op">;</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// should be ||</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>text<span class="op">==</span><span class="kw">null</span> <span class="op">&amp;&amp;</span> text<span class="op">.</span><span class="fu">equals</span><span class="op">(</span><span class="st">&quot;&quot;</span><span class="op">))</span> <span class="op">{</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> text<span class="op">;</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h2 id="indications-of-sloppy-code">Indications of sloppy code</h2>
 <p>The rules in this section are typically just sloppy: they distract other people who try to understand your code from what is important. Therefore, you should avoid having them in your code, but they are not considered as severe as the other rules.</p>
-<p>Relevant external links to these rules: * <a href="https://checkstyle.sourceforge.io/config_blocks.html#EmptyBlock">EmptyBlock</a> * <a href="https://checkstyle.sourceforge.io/config_coding.html#EmptyStatement">EmptyStatement</a> * <a href="https://checkstyle.sourceforge.io/config_coding.html#IllegalThrows">IllegalThrows</a> * <a href="https://checkstyle.sourceforge.io/config_coding.html#IllegalCatch">IllegalCatch</a> * <a href="https://checkstyle.sourceforge.io/config_coding.html#IllegalType">IllegalType</a> * <a href="https://checkstyle.sourceforge.io/config_imports.html#UnusedImports">UnusedImports</a> * <a href="https://checkstyle.sourceforge.io/config_misc.html#TodoComment">TodoComment</a> * <a href="https://checkstyle.sourceforge.io/config_misc.html#UncommentedMain">UncommentedMain</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#idempotentoperations">IdempotentOperations</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#missingbreakinswitch">MissingBreakInSwitch</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#duplicateimports">DuplicateImports</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#doublebraceinitialization">DoubleBraceInitialization</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#switchstmtsshouldhavedefault">SwitchStmtsShouldHaveDefault</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#unusednullcheckinequals">UnusedNullCheckInEquals</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#unusedimports">UnusedImports</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#unnecessaryreturn">UnnecessaryReturn</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#avoidcatchingthrowable">AvoidCatchingThrowable</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#avoidcatchingnpe">AvoidCatchingNPE</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#whileloopwithliteralboolean">WhileLoopWithLiteralBoolean</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#dontimportjavalang">DontImportJavaLang</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_design.html#abstractclasswithoutanymethod">AbstractClassWithoutAnyMethod</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#uselessparentheses">UselessParentheses</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#usediamondoperator">UseDiamondOperator</a></p>
+<p>Relevant external links to these rules: * <a href="https://checkstyle.sourceforge.io/config_blocks.html#EmptyBlock">EmptyBlock</a> * <a href="https://checkstyle.sourceforge.io/config_coding.html#EmptyStatement">EmptyStatement</a> * <a href="https://checkstyle.sourceforge.io/config_coding.html#IllegalThrows">IllegalThrows</a> * <a href="https://checkstyle.sourceforge.io/config_coding.html#IllegalCatch">IllegalCatch</a> * <a href="https://checkstyle.sourceforge.io/config_coding.html#IllegalType">IllegalType</a> * <a href="https://checkstyle.sourceforge.io/config_imports.html#UnusedImports">UnusedImports</a> * <a href="https://checkstyle.sourceforge.io/config_misc.html#TodoComment">TodoComment</a> * <a href="https://checkstyle.sourceforge.io/config_misc.html#UncommentedMain">UncommentedMain</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#idempotentoperations">IdempotentOperations</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#missingbreakinswitch">MissingBreakInSwitch</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#duplicateimports">DuplicateImports</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#doublebraceinitialization">DoubleBraceInitialization</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#switchstmtsshouldhavedefault">SwitchStmtsShouldHaveDefault</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#unusedimports">UnusedImports</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#unnecessaryreturn">UnnecessaryReturn</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#avoidcatchingthrowable">AvoidCatchingThrowable</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_errorprone.html#avoidcatchingnpe">AvoidCatchingNPE</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_bestpractices.html#whileloopwithliteralboolean">WhileLoopWithLiteralBoolean</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#dontimportjavalang">DontImportJavaLang</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_design.html#abstractclasswithoutanymethod">AbstractClassWithoutAnyMethod</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#uselessparentheses">UselessParentheses</a> * <a href="https://pmd.github.io/pmd-6.17.0/pmd_rules_java_codestyle.html#usediamondoperator">UseDiamondOperator</a></p>
 <h3 id="avoid-empty-blocks">Avoid Empty Blocks</h3>
 <p>Empty blocks are typically an indication the structure of your program can be improved or simplified. They distract from the actual logic of your program. Therefore, you should avoid these. Often, empty blocks that may seem <em>logical</em> can be avoided by rewriting <code>boolean</code> expressions. For example. the following pattern:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> x = <span class="fu">computeX</span>();
-<span class="dt">int</span> y = <span class="fu">computeY</span>();
-<span class="co">// The first block is empty</span>
-<span class="kw">if</span> (x &gt; <span class="dv">5</span> &amp;&amp; y &lt; <span class="dv">25</span> &amp;&amp; x &gt; y) {
-}
-<span class="kw">else</span> {
-   <span class="fu">doSomething</span>();
-}</code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="fu">computeX</span><span class="op">();</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> y <span class="op">=</span> <span class="fu">computeY</span><span class="op">();</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co">// The first block is empty</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>x <span class="op">&gt;</span> <span class="dv">5</span> <span class="op">&amp;&amp;</span> y <span class="op">&lt;</span> <span class="dv">25</span> <span class="op">&amp;&amp;</span> x <span class="op">&gt;</span> y<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>   <span class="fu">doSomething</span><span class="op">();</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>can be rewritten to the more consise and less error prone:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> x = <span class="fu">computeX</span>();
-<span class="dt">int</span> y = <span class="fu">computeY</span>();
-<span class="co">// We can use a negation to remove the empty block</span>
-<span class="kw">if</span> (!(x &gt; <span class="dv">5</span> &amp;&amp; y &lt; <span class="dv">25</span> &amp;&amp; x &gt; y)) {
-   <span class="fu">doSomething</span>();
-}</code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="fu">computeX</span><span class="op">();</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> y <span class="op">=</span> <span class="fu">computeY</span><span class="op">();</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co">// We can use a negation to remove the empty block</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(!(</span>x <span class="op">&gt;</span> <span class="dv">5</span> <span class="op">&amp;&amp;</span> y <span class="op">&lt;</span> <span class="dv">25</span> <span class="op">&amp;&amp;</span> x <span class="op">&gt;</span> y<span class="op">))</span> <span class="op">{</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">doSomething</span><span class="op">();</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Note that empty methods or constructors are allowed, as these are sometimes necessary or useful and can not always be avoided.</p>
 <h3 id="avoid-empty-statements">Avoid Empty Statements</h3>
 <p>Empty statement do nothing, and are therefore clutter in your code. They are causes by having unnecessary semi-colons and should be avoided. The following code fragment contains an example:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// Note the double semi-colon that results in an empty statement.</span>
-<span class="dt">int</span> b = <span class="dv">3+5</span>;;</code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Note the double semi-colon that results in an empty statement.</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> b <span class="op">=</span> <span class="dv">3</span><span class="op">+</span><span class="dv">5</span><span class="op">;;</span></span></code></pre></div>
 <h3 id="avoid-catching-or-throwing-exception-types-that-are-too-general">Avoid catching or throwing exception types that are too general</h3>
 <p>When you catch an exception, you should catch an exception that is specific enough. Exception types that are too general, should not be could. Therefore, it is not allowed to catch exception of type <code>Error</code>, <code>Exception</code>, <code>Throwable</code> or <code>RuntimeException</code>. Similar, you should not define method headers that mention one of these exception types after the <code>throws</code> keyword. If you catch exceptions that are too general, there is a risk that you catch exceptions you did not expect: this can make debugging a lot more complicated (in particular if the exception is ignored). If your method throws exceptions of a type that is too general, it is highly likely the users of that method do not have enough information about the potential causes of that exception, and what they can do to avoid or handle those exceptions.</p>
 <h3 id="collections-api-use-the-interfaces-as-types">Collections API: use the interfaces as types</h3>
 <p>When you start working with the Collections API, you should declare variables of the various Collections types by their interface type, rather than use explicit class types. So, <code>List</code>, <code>Set</code>, <code>Map</code>, <code>SortedSet</code> and <code>SortedMap</code> are preferred over <code>ArrayList</code>, <code>HashSet</code>, <code>HashMap</code>, etc. The reason is that it should be easy to change the implementation of your data structure. The following code-fragment contains variables that are not defined by the correct interface type:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> MyClass {
-   
-   <span class="co">// This is not allowed</span>
-   <span class="kw">private</span> ArrayList&lt;String&gt; lines;
-
-   <span class="kw">public</span> <span class="fu">MyClass</span>() {
-      <span class="co">// It is always allowed (and in fact necessary) to call the constructor</span>
-      <span class="co">// of concrete Collections API types.</span>
-      <span class="kw">this</span>.<span class="fu">lines</span> = <span class="kw">new</span> ArrayList&lt;&gt;();
-   }
-   
-   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">doSomething</span>() {
-      <span class="co">// The type of this variable is also not an interface type</span>
-      TreeSet&lt;String&gt; mySet = <span class="kw">new</span> TreeSet&lt;&gt;();
-   }
-}</code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MyClass <span class="op">{</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>   <span class="co">// This is not allowed</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> lines<span class="op">;</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="fu">MyClass</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>      <span class="co">// It is always allowed (and in fact necessary) to call the constructor</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>      <span class="co">// of concrete Collections API types.</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="fu">lines</span> <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">doSomething</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>      <span class="co">// The type of this variable is also not an interface type</span></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>      <span class="bu">TreeSet</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> mySet <span class="op">=</span> <span class="kw">new</span> <span class="bu">TreeSet</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>To fix this example, it should be as follows:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> MyClass {
-   
-   <span class="co">// The correct interface type is List</span>
-   <span class="kw">private</span> List&lt;String&gt; lines;
-
-   <span class="kw">public</span> <span class="fu">MyClass</span>() {
-      <span class="co">// It is always allowed (and in fact necessary) to call the constructor</span>
-      <span class="co">// of concrete Collections API types.</span>
-      <span class="kw">this</span>.<span class="fu">lines</span> = <span class="kw">new</span> ArrayList&lt;&gt;();
-   }
-   
-   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">doSomething</span>() {
-      <span class="co">// For a TreeSet, we can use either Set or SortedSet as the interface type.</span>
-      SortedSet&lt;String&gt; mySet = <span class="kw">new</span> TreeSet&lt;&gt;();
-   }
-}</code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MyClass <span class="op">{</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>   <span class="co">// The correct interface type is List</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">private</span> <span class="bu">List</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> lines<span class="op">;</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="fu">MyClass</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>      <span class="co">// It is always allowed (and in fact necessary) to call the constructor</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>      <span class="co">// of concrete Collections API types.</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="fu">lines</span> <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>   <span class="kw">public</span> <span class="dt">void</span> <span class="fu">doSomething</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>      <span class="co">// For a TreeSet, we can use either Set or SortedSet as the interface type.</span></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>      <span class="bu">SortedSet</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> mySet <span class="op">=</span> <span class="kw">new</span> <span class="bu">TreeSet</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="avoid-defining-unused-imports">Avoid defining unused imports</h3>
 <p>Having import statements that are never used result in warnings from Eclipse and the Java compiler. This is sloppy, useless code, which we should remove from a <code>.java</code> file. In Eclipse it is possible to use a feature called <em>Organize imports</em> (under the <em>Source</em> menu, or with ctrl+shift+O) that automatically removes any unused imports from a file.</p>
 <h3 id="remove-todo-and-auto-generated-comments">Remove TODO and auto-generated comments</h3>
@@ -589,133 +657,133 @@ bi = bi.<span class="fu">add</span>(BigInteger.<span class="fu">valueOf</span>(<
 <p>Note that in the assignments of FEB22012 Programming, you are typically not required to hand in your own <code>main</code> method, unless this is stated otherwise.</p>
 <h3 id="idempotentoperations">IdempotentOperations</h3>
 <p>Avoid idempotent operations - these are operations have no effect and can thus be removed.</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> x = <span class="dv">2</span>;
-x = x;</code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> x <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> x<span class="op">;</span></span></code></pre></div>
 <h3 id="missingbreakinswitch">MissingBreakInSwitch</h3>
 <p>You can always avoid using <code>switch</code> statements by replacing them with multiple <code>if</code>, <code>else-if</code>, <code>else</code> statements. If you like to use a <code>switch</code> statement instead, make sure that each case option has a break or return statement. Failing to do so may indicate problematic behaviour. Empty cases are ignored as these indicate an intentional fall-through.</p>
 <p>Examples:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">switch</span>(status) {
-  <span class="kw">case</span> CANCELLED:
-    <span class="fu">doCancelled</span>();
-    <span class="co">// break; hm, should this be commented out?</span>
-  <span class="kw">case</span> NEW:
-    <span class="fu">doNew</span>();
-    <span class="co">// is this really a fall-through?</span>
-  <span class="kw">case</span> REMOVED:
-    <span class="fu">doRemoved</span>();
-    <span class="co">// what happens if you add another case after this one?</span>
-  <span class="kw">case</span> OTHER: <span class="co">// empty case - this is interpreted as an intentional fall-through</span>
-  <span class="kw">case</span> ERROR:
-    <span class="fu">doErrorHandling</span>();
-    <span class="kw">break</span>;
-}</code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="cf">switch</span><span class="op">(</span>status<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">case</span> CANCELLED<span class="op">:</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">doCancelled</span><span class="op">();</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// break; hm, should this be commented out?</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">case</span> NEW<span class="op">:</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">doNew</span><span class="op">();</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">// is this really a fall-through?</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">case</span> REMOVED<span class="op">:</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">doRemoved</span><span class="op">();</span></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// what happens if you add another case after this one?</span></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">case</span> OTHER<span class="op">:</span> <span class="co">// empty case - this is interpreted as an intentional fall-through</span></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">case</span> ERROR<span class="op">:</span></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">doErrorHandling</span><span class="op">();</span></span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="switchstmtsshouldhavedefault">SwitchStmtsShouldHaveDefault</h3>
 <p>All switch statements should include a default option to catch any unspecified values.</p>
 <p><strong>Examples:</strong></p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">bar</span>(<span class="dt">int</span> x) {
-    <span class="kw">switch</span> (x) {
-      <span class="kw">case</span> <span class="dv">1</span>: <span class="dt">int</span> j = <span class="dv">6</span>;
-      <span class="kw">case</span> <span class="dv">2</span>: <span class="dt">int</span> j = <span class="dv">8</span>;
-          <span class="co">// missing default: here</span>
-    }
-}</code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">bar</span><span class="op">(</span><span class="dt">int</span> x<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">switch</span> <span class="op">(</span>x<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>      <span class="cf">case</span> <span class="dv">1</span><span class="op">:</span> <span class="dt">int</span> j <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>      <span class="cf">case</span> <span class="dv">2</span><span class="op">:</span> <span class="dt">int</span> j <span class="op">=</span> <span class="dv">8</span><span class="op">;</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>          <span class="co">// missing default: here</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="duplicateimports">DuplicateImports</h3>
 <p>Duplicate or overlapping import statements should be avoided.</p>
 <p><strong>Examples:</strong></p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import java.lang.String;</span>
-<span class="kw">import java.lang.*;</span>
-<span class="kw">public</span> <span class="kw">class</span> Foo {}</code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">lang</span><span class="op">.</span><span class="im">String</span><span class="op">;</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">lang</span><span class="op">.*;</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Foo <span class="op">{}</span></span></code></pre></div>
 <h3 id="doublebraceinitialization">DoubleBraceInitialization</h3>
-<p>Double brace initialisation is a pattern to initialise eg collections concisely. But it implicitly generates a new <code>.class</code> file, and the object holds a strong reference to the enclosing object. For those reasons, it is preferable to initialize the object normally, even though it's more verbose.</p>
+<p>Double brace initialisation is a pattern to initialise eg collections concisely. But it implicitly generates a new <code>.class</code> file, and the object holds a strong reference to the enclosing object. For those reasons, it is preferable to initialize the object normally, even though it’s more verbose.</p>
 <p>Since you never need inner classes or initializer blocks in this course, the following examples</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// this is double-brace initialization</span>
-<span class="kw">return</span> <span class="kw">new</span> ArrayList&lt;String&gt;(){{ <span class="fu">addAll</span>(<span class="st">&quot;a&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>); }};</code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this is double-brace initialization</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;(){{</span> <span class="fu">addAll</span><span class="op">(</span><span class="st">&quot;a&quot;</span><span class="op">,</span><span class="st">&quot;b&quot;</span><span class="op">,</span><span class="st">&quot;c&quot;</span><span class="op">);</span> <span class="op">}};</span></span></code></pre></div>
 <p>should be written as</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// the better way is to not create an anonymous class:</span>
-List&lt;String&gt; a = <span class="kw">new</span> ArrayList&lt;&gt;();
-a.<span class="fu">addAll</span>(<span class="st">&quot;a&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>);
-<span class="kw">return</span> a;</code></pre></div>
-<p>Alternatively, it may be an option to use <code>Arrays.listOf(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)</code> or <code>List.of(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</code> in Java versions where this is supported.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">// the better way is to not create an anonymous class:</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="bu">List</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> a <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>a<span class="op">.</span><span class="fu">addAll</span><span class="op">(</span><span class="st">&quot;a&quot;</span><span class="op">,</span><span class="st">&quot;b&quot;</span><span class="op">,</span><span class="st">&quot;c&quot;</span><span class="op">);</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> a<span class="op">;</span></span></code></pre></div>
+<p>Alternatively, it may be an option to use <code>Arrays.listOf("a","b","c")</code> or <code>List.of("a", "b", "c")</code> in Java versions where this is supported.</p>
 <h3 id="unnecessaryreturn">UnnecessaryReturn</h3>
 <p>Avoid the use of unnecessary return statements. These are typically return statements at the end of a <code>void</code> method.</p>
 <p>For example, the return statement in the following method can be omitted:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">bar</span>() {
-    <span class="dt">int</span> x = <span class="dv">42</span>;
-    <span class="kw">return</span>;
-}</code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">bar</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> x <span class="op">=</span> <span class="dv">42</span><span class="op">;</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="avoidcatchingthrowable">AvoidCatchingThrowable</h3>
 <p>Catching Throwable errors is not recommended since its scope is very broad. It includes runtime issues such as OutOfMemoryError that should be exposed and managed separately.</p>
 <p>For example:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">void</span> <span class="fu">bar</span>() {
-    <span class="kw">try</span> {
-        <span class="co">// do something</span>
-    } <span class="kw">catch</span> (Throwable th) {  <span class="co">// should not catch Throwable</span>
-        th.<span class="fu">printStackTrace</span>();
-    }
-}</code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">bar</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">// do something</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span><span class="bu">Throwable</span> th<span class="op">)</span> <span class="op">{</span>  <span class="co">// should not catch Throwable</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>        th<span class="op">.</span><span class="fu">printStackTrace</span><span class="op">();</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="avoidcatchingnpe">AvoidCatchingNPE</h3>
 <p>Code should never throw NullPointerExceptions under normal circumstances; if it does, you should typically change the code to avoid this. A catch block that catches <code>NullPointerException</code> may hide the original error, causing other, more subtle problems in the problem as well.</p>
 <p>For example:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Foo {
-    <span class="dt">void</span> <span class="fu">bar</span>() {
-        <span class="kw">try</span> {
-            <span class="co">// do something</span>
-        } <span class="kw">catch</span> (NullPointerException npe) { <span class="co">// Avoid doing this</span>
-        }
-    }
-}</code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Foo <span class="op">{</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> <span class="fu">bar</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>            <span class="co">// do something</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span><span class="bu">NullPointerException</span> npe<span class="op">)</span> <span class="op">{</span> <span class="co">// Avoid doing this</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="whileloopwithliteralboolean">WhileLoopWithLiteralBoolean</h3>
 <p><code>do {} while (true);</code> requires reading the end of the statement before it is apparent that it loops forever, whereas <code>while (true) {}</code> is easier to understand.</p>
 <p><code>do {} while (false);</code> is redundant, and if an inner variable scope is required, a block <code>{}</code> is sufficient.</p>
 <p><code>while (false) {}</code> will never execute the block and can be removed in its entirety.</p>
 <p><strong>Examples:</strong></p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="kw">class</span> Example {
-  {
-    <span class="kw">while</span> (<span class="kw">true</span>) { } <span class="co">// allowed</span>
-    <span class="kw">while</span> (<span class="kw">false</span>) { } <span class="co">// disallowed</span>
-    <span class="kw">do</span> { } <span class="kw">while</span> (<span class="kw">true</span>); <span class="co">// disallowed</span>
-    <span class="kw">do</span> { } <span class="kw">while</span> (<span class="kw">false</span>); <span class="co">// disallowed</span>
-  }
-}</code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Example <span class="op">{</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="op">(</span><span class="kw">true</span><span class="op">)</span> <span class="op">{</span> <span class="op">}</span> <span class="co">// allowed</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="op">(</span><span class="kw">false</span><span class="op">)</span> <span class="op">{</span> <span class="op">}</span> <span class="co">// disallowed</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">do</span> <span class="op">{</span> <span class="op">}</span> <span class="cf">while</span> <span class="op">(</span><span class="kw">true</span><span class="op">);</span> <span class="co">// disallowed</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">do</span> <span class="op">{</span> <span class="op">}</span> <span class="cf">while</span> <span class="op">(</span><span class="kw">false</span><span class="op">);</span> <span class="co">// disallowed</span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="dontimportjavalang">DontImportJavaLang</h3>
-<p>Avoid importing anything from the package 'java.lang'. These classes are automatically imported.</p>
+<p>Avoid importing anything from the package ‘java.lang’. These classes are automatically imported.</p>
 <p>For example:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="kw">import java.lang.String;</span>    <span class="co">// this is unnecessary</span>
-<span class="kw">import java.lang.*;</span>         <span class="co">// this is bad</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">lang</span><span class="op">.</span><span class="im">String</span><span class="op">;</span>    <span class="co">// this is unnecessary</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">lang</span><span class="op">.*;</span>         <span class="co">// this is bad</span></span></code></pre></div>
 <h3 id="abstractclasswithoutanymethod">AbstractClassWithoutAnyMethod</h3>
 <p>If an abstract class does not provides any methods, it may be acting as a simple data container that is not meant to be instantiated. In this case, it is probably better to use a private or protected constructor in order to prevent instantiation than make the class misleadingly abstract.</p>
 <p>For example:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// This abstract class has no methods, make it a regular class instead</span>
-<span class="kw">public</span> <span class="kw">abstract</span> <span class="kw">class</span> Example {
-    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> String BRAND = <span class="st">&quot;Fancy Brand&quot;</span>;
-    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">int</span> BRAND_YEAR = <span class="dv">2019</span>;
-}</code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co">// This abstract class has no methods, make it a regular class instead</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">abstract</span> <span class="kw">class</span> Example <span class="op">{</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="bu">String</span> BRAND <span class="op">=</span> <span class="st">&quot;Fancy Brand&quot;</span><span class="op">;</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">final</span> <span class="dt">int</span> BRAND_YEAR <span class="op">=</span> <span class="dv">2019</span><span class="op">;</span></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="uselessparentheses">UselessParentheses</h3>
 <p>Trivial cases of useless parentheses should be removed as they clutter the code. Note that in mathematical expressions, unnecessary parentheses are allowed if they make the formula easier to understand.</p>
 <p>For example</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> n = <span class="dv">5</span>;
-Integer i = Integer.<span class="fu">valueOf</span>((n));
-Integer o = (n);</code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Integer</span> i <span class="op">=</span> <span class="bu">Integer</span><span class="op">.</span><span class="fu">valueOf</span><span class="op">((</span>n<span class="op">));</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Integer</span> o <span class="op">=</span> <span class="op">(</span>n<span class="op">);</span></span></code></pre></div>
 <p>can be written as</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="dt">int</span> n = <span class="dv">5</span>;
-Integer i = Integer.<span class="fu">valueOf</span>(n);
-Integer o = n;</code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> n <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Integer</span> i <span class="op">=</span> <span class="bu">Integer</span><span class="op">.</span><span class="fu">valueOf</span><span class="op">(</span>n<span class="op">);</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Integer</span> o <span class="op">=</span> n<span class="op">;</span></span></code></pre></div>
 <h3 id="usediamondoperator">UseDiamondOperator</h3>
 <p>Use the diamond operator to let the type be inferred automatically. With the Diamond operator it is possible to avoid duplication of the type parameters. Instead, the compiler is now able to infer the parameter types for constructor calls, which makes the code also more readable.</p>
 <p>Example:</p>
-<div class="sourceCode"><pre class="sourceCode java"><code class="sourceCode java"><span class="co">// The following contains an unnecessary duplication of type parameters</span>
-List&lt;String&gt; strings = <span class="kw">new</span> ArrayList&lt;String&gt;();
-<span class="co">// The following uses the diamond operator and is more concise</span>
-List&lt;String&gt; stringsWithDiamond = <span class="kw">new</span> ArrayList&lt;&gt;();</code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co">// The following contains an unnecessary duplication of type parameters</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="bu">List</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> strings <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;();</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co">// The following uses the diamond operator and is more concise</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="bu">List</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> stringsWithDiamond <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;();</span></span></code></pre></div>
 <h2 id="coding-style">Coding style</h2>
 <p>Note that many aspects of coding style can not be checked automatically. In particular, the structure of your program should be reasonable: if it makes sense to introduce additional helper methods, you should. You should also make sure variables have easy to understand names, in particular if they are use in long part of the code.</p>
 <h3 id="naming-conventions">Naming Conventions</h3>
 <p>Java has a number of naming conventions. Adhering to these conventions make sure that other (experienced) Java programmers can understand your code more easily, as things are named as they expect. It is good practice to adhere to these conventions as well.</p>
 <p>An common type of naming used in Java is <a href="https://en.wikipedia.org/wiki/Camel_case">camel case</a>. In <strong>lower camel case</strong> a name starts with a lower case letter, while every new word after the first starts with a capital letter. In most cases, it is allowed to use a number (except for the first symbol of the name). Examples are <code>x</code>, <code>productPrice</code>, <code>student1</code>, <code>course2</code>. This naming style is most common is used for lambda parameters, local variables, instance variables, method names, parameter names and static variable names.</p>
-<p>In <strong>upper camel case</strong> a name start with an upper case letter, while every new word after the first starts with a capital letter. Examples are: <code>Student</code>, <code>BufferedReader</code>, <code>MyTester</code>, etcetera. This style is used for all type names, e.g. class names, interface names, and other types that are not covered in this course, including enums and annotations.</p>
+<p>In <strong>upper camel case</strong> a name start with an upper case letter, while every new word after the first starts with a capital letter. Examples are: <code>Student</code>, <code>BufferedReader</code>, <code>MyTester</code>, etcetera. This style is used for all type names, e.g. class names, interface names, and other types that are not covered in this course, including enums and annotations.</p>
 <p>The naming conventions that are checked are as follows:</p>
 <ul>
-<li><strong>Constants</strong> : constant fields (e.g. those that are both <code>static</code> and <code>final</code>) should have names in capital letters, where words are separated by an underscore. For example <code>SOFTWARE_VERSION</code>, <code>PI</code>, <code>FEIGENBAUM_CONSTANT</code>, etc.</li>
+<li><strong>Constants</strong> : constant fields (e.g. those that are both <code>static</code> and <code>final</code>) should have names in capital letters, where words are separated by an underscore. For example <code>SOFTWARE_VERSION</code>, <code>PI</code>, <code>FEIGENBAUM_CONSTANT</code>, etc.</li>
 <li><strong>Lambda parameters</strong> : parameter names of variables used in lambda expressions should have camel case names, with the additional exception that no numbers are allowed. So you can have <code>productPrice</code>, but not <code>product3Price</code>.</li>
 <li><strong>Local (final) variable names</strong> : local variables (regardless of whether they are final) should be in <em>lower camel case</em>.</li>
 <li><strong>Instance variables / member names</strong> : the names of instance variables should be in <em>lower camel case</em>, like local variable names.</li>
@@ -746,7 +814,7 @@ List&lt;String&gt; stringsWithDiamond = <span class="kw">new</span> ArrayList&lt
 <li>Avoid using trailing comments that are on the same line as the code they are describing. Often they just state the same thing as the line is doing, and if something more complex is explained, it looks cleaner to write this above the section of code that is being described. Trailing comments are comments that look like <code>int x = 5; // assign 5 to variable x</code>.</li>
 <li>Use a single statement for each line. While you can start a new statement directly after a semicolon, it is cleaner to do so on a new line. For example, <code>int x = 5; int y = x + 3;</code> should be put on two lines rather than one.</li>
 <li>Avoid having space symbols just before a line break; these are unnecessary and sloppy.</li>
-<li>When using generic types, e.g. <code>List&lt;String&gt;</code>, make sure that the whitespace around the generic angle brackets <code>&lt;</code> and <code>&gt;</code> is according to the typical convention. This means that when <code>&lt;</code> is used to define a generic type, it should not be preceded by a space if it follows a type name or method, and should never be followed by a space. When <code>&gt;</code> is used in a generic type, it should never be preceded by whitespace and always be followed by whitespace, unless used in a diamond operator. Check <a href="https://checkstyle.sourceforge.io/config_whitespace.html#GenericWhitespace">this page</a> for a number of examples that are correct.</li>
+<li>When using generic types, e.g. <code>List&lt;String&gt;</code>, make sure that the whitespace around the generic angle brackets <code>&lt;</code> and <code>&gt;</code> is according to the typical convention. This means that when <code>&lt;</code> is used to define a generic type, it should not be preceded by a space if it follows a type name or method, and should never be followed by a space. When <code>&gt;</code> is used in a generic type, it should never be preceded by whitespace and always be followed by whitespace, unless used in a diamond operator. Check <a href="https://checkstyle.sourceforge.io/config_whitespace.html#GenericWhitespace">this page</a> for a number of examples that are correct.</li>
 </ul>
 <p>Links to relevant layout rules:</p>
 <ul>
@@ -761,7 +829,7 @@ List&lt;String&gt; stringsWithDiamond = <span class="kw">new</span> ArrayList&lt
 <h3 id="other-naming-issues">Other naming issues</h3>
 <p>There are a number of issues related to names that you should usually avoid, as they are confusing. These issues are:</p>
 <ul>
-<li>Don't use the names <code>hashcode()</code> and <code>equals()</code> for methods other than methods that do not override the methods with similar or the same name from the <code>Object</code> class.</li>
+<li>Don’t use the names <code>hashcode()</code> and <code>equals()</code> for methods other than methods that do not override the methods with similar or the same name from the <code>Object</code> class.</li>
 <li>Avoid defining fields or instance variables that have the same name as the class. For example, in a class called <code>Student</code> you should avoid defining a field or instance variables with the name <code>student</code>.</li>
 <li>Avoid using dollar signs in variable/method/class/interface names.</li>
 <li>Avoid creating non-constructor methods that have the same name as their class. For example, a class <code>Student</code> should not define a method <code>public void Student()</code> as it is a non-constructor method. A constructor such as <code>public Student()</code> is allowed.</li>
@@ -777,5 +845,7 @@ List&lt;String&gt; stringsWithDiamond = <span class="kw">new</span> ArrayList&lt
             </div>
     </div>
   </div>
+  <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+
 </body>
 </html>
