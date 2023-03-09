@@ -907,7 +907,7 @@ your code is not neatly finished. Thus, this is not allowed in your final submis
 ### Only define a main method in classes that have a name ending with Main
 
 Often it is useful to define `main` methods in classes to test whether they work
-as expected or not. In your final code, however, it is best to litter classes with
+as expected or not. In your final code, however, it is best not to litter classes with
 testing code that is irrelevant to the user of that class. Therefore, only classes
 that are designed to contain a `main` method to be used by the end-user should
 contain a `main` method. These classes should have a name that ends with `Main`.
